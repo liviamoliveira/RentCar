@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">RentCar</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboards</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">G6- RentCar</string>
+    <string name="tv_home">INÍCIO</string>
+    <string name="tv_reserva">RESERVAS</string>
+    <string name="tv_cadastro">CADASTRO</string>
+    <string name="tv_buttonHome">ALUGUE UM VEÍCULO</string>
 </resources>

@@ -8,18 +8,17 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="dev.localiza.rentcar.ui.home.HomeFragment"
-        android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="dev.localiza.rentcar.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:label="@string/tv_reserva"
+        tools:layout="@layout/fragment_Reservas" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="dev.localiza.rentcar.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/tv_cadastro"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

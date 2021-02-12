@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="verde_escuro">#004A34</color>
+
     <color name="verde_contraste">#21A261</color>
-    <color name="verde_claro">#2BB05D</color>
+    <color name="verde_botoes">#44B04B</color>
     <color name="verde_agua">#05A58D</color>
     <color name="verde_limao">#81E435</color>
-    <color name="amerelo_esverdeado">#CCDD00</color>
-    <color name="amarelo">#FEF200</color>
+    <color name="amarelo">#FFEF0C</color>
+    <color name="cinza_esverdeado">#A1D4BA</color>
+    <color name="cinza_claro">#BAB8B5</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
