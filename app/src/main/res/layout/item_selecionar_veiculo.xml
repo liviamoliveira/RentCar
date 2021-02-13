@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cdVeiculos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="16dp"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCategoriaVeiculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/tv_categoriaCard"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMarcaVeiculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/tv_marcaCard"
+                android:textColor="@color/cinza_escuro"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvCategoriaVeiculo"
+                app:layout_constraintStart_toEndOf="@+id/tvCategoriaVeiculo"
+                app:layout_constraintTop_toTopOf="@+id/tvCategoriaVeiculo" />
+
+            <TextView
+                android:id="@+id/tvModeloVeiculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/tv_modeloCard"
+                android:textColor="@color/cinza_claro"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMarcaVeiculo" />
+
+            <ImageView
+                android:id="@+id/ivCarro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="120dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvModeloVeiculo"
+                tools:src="@drawable/ic_logo" />
+
+            <ImageView
+                android:id="@+id/ivRetangulo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/shape_retangulo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivCarro" />
+
+            <TextView
+                android:id="@+id/tvPreco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/tv_preco"
+                android:textColor="@color/cinza_escuro"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/ivRetangulo"
+                app:layout_constraintTop_toTopOf="@+id/ivRetangulo" />
+
+            <Button
+                android:id="@+id/btIrDetalhes"
+                style="@style/ButtonPrimary.Toggle3"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:width="350dp"
+                android:height="70dp"
+                android:backgroundTint="@color/verde_contraste"
+                android:text="@string/btn_IrDetalhes"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPreco"
+                app:layout_constraintEnd_toEndOf="@+id/ivRetangulo"
+                app:layout_constraintStart_toEndOf="@+id/tvPreco"
+                app:layout_constraintTop_toTopOf="@+id/tvPreco" />
+
+
+            <ImageView
+                android:id="@+id/ivAr"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_ar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivCarro"
+                app:layout_constraintTop_toTopOf="@+id/ivCarro" />
+
+            <TextView
+                android:id="@+id/tvAC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:text="@string/tv_AC"
+                android:textColor="@color/verde_contraste"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivAr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivAr"
+                app:layout_constraintTop_toTopOf="@+id/ivAr" />
+
+
+            <ImageView
+                android:id="@+id/ivMala"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_mala"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivCarro"
+                app:layout_constraintTop_toBottomOf="@+id/ivAr" />
+
+            <TextView
+                android:id="@+id/tvMala"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:text="@string/tv_malas"
+                android:textColor="@color/verde_contraste"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivMala"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivMala"
+                app:layout_constraintTop_toTopOf="@+id/ivMala" />
+
+            <ImageView
+                android:id="@+id/ivPassageiros"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_passageiros"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivCarro"
+                app:layout_constraintTop_toBottomOf="@+id/ivMala" />
+
+            <TextView
+                android:id="@+id/tvPassageiros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:text="@string/tv_passageiros"
+                android:textColor="@color/verde_contraste"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPassageiros"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivPassageiros"
+                app:layout_constraintTop_toTopOf="@+id/ivPassageiros" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
