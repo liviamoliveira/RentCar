@@ -37,7 +37,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\livia\Desktop\imagensRentCar\logo_g6.png" />
+                                                <entry key="imagePath" value="C:\Users\livia\Desktop\imagensRentCar\veiculo.png" />
                                                 <entry key="opacityPercent" value="60" />
                                               </map>
                                             </option>
@@ -71,7 +71,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\livia\Desktop\imagensRentCar\logo_g6.png" />
+                                      <entry key="imageAsset" value="C:\Users\livia\Desktop\imagensRentCar\veiculo.png" />
+                                      <entry key="outputName" value="img_veiculo" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -359,8 +360,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_shape_interno" />
-                            <entry key="sourceFile" value="C:\Users\livia\Desktop\imagensRentCar\shape_interno.svg" />
+                            <entry key="outputName" value="ic_passageiros" />
+                            <entry key="sourceFile" value="C:\Users\livia\Desktop\imagensRentCar\passageiros.svg" />
                           </map>
                         </option>
                       </PersistentState>

@@ -8,6 +8,7 @@
     <color name="verde_limao">#81E435</color>
     <color name="amarelo">#FFEF0C</color>
     <color name="cinza_esverdeado">#A1D4BA</color>
+    <color name="cinza_escuro">#808080</color>
     <color name="cinza_claro">#BAB8B5</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

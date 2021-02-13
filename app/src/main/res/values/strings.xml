@@ -9,5 +9,16 @@
     <string name="btn_criarreserva">CRIAR RESERVA</string>
     <string name="tv_saudacao">Olá!</string>
     <string name="tv_txReserva">Digite o seu CPF para consultar suas reservas.</string>
+    <string name="tv_saudacaoVeiculo">Selecione o veículo</string>
+    <string name="iv_fotoCarro">Foto Carro</string>
+    <string name="tv_categoriaCard">Categoria</string>
+    <string name="tv_marcaCard">Marca</string>
+    <string name="tv_modeloCard">Modelo</string>
+    <string name="tv_preco">R$ 99,00</string>
+    <string name="btn_IrDetalhes">Quero Esse</string>
+    <string name="tv_AC">AC</string>
+    <string name="tv_malas">2</string>
+    <string name="tv_passageiros">5</string>
+
 
 </resources>
