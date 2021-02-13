@@ -11,8 +11,7 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/shape_gradient"
-        android:paddingTop="35dp"
-        >
+        android:paddingTop="35dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,7 +22,7 @@
                 android:id="@+id/img_logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="84dp"
+                android:layout_marginTop="170dp"
                 android:layout_marginEnd="68dp"
                 android:src="@drawable/ic_logo"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -35,9 +34,9 @@
                 style="@style/ButtonPrimary.Toggle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="32dp"
                 android:width="350dp"
                 android:height="70dp"
                 android:backgroundTint="@color/white"
@@ -50,20 +49,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/img_logo" />
 
 
-
-
-
-
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
     </LinearLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

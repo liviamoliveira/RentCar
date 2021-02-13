@@ -4,4 +4,10 @@
     <string name="tv_reserva">RESERVAS</string>
     <string name="tv_cadastro">CADASTRO</string>
     <string name="tv_buttonHome">ALUGUE UM VEÍCULO</string>
+    <string name="et_cpf">CPF</string>
+    <string name="btn_consultar">CONSULTAR</string>
+    <string name="btn_criarreserva">CRIAR RESERVA</string>
+    <string name="tv_saudacao">Olá!</string>
+    <string name="tv_txReserva">Digite o seu CPF para consultar suas reservas.</string>
+
 </resources>

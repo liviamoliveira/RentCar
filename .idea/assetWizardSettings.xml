@@ -359,8 +359,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_cadastrar" />
-                            <entry key="sourceFile" value="C:\Users\livia\Desktop\imagensRentCar\cadastrar.svg" />
+                            <entry key="outputName" value="ic_shape_interno" />
+                            <entry key="sourceFile" value="C:\Users\livia\Desktop\imagensRentCar\shape_interno.svg" />
                           </map>
                         </option>
                       </PersistentState>

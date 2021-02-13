@@ -11,14 +11,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="dev.localiza.rentcar.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_reserva"
+        android:name="dev.localiza.rentcar.ui.reservas.consultar.ConsultarReservaFragment"
         android:label="@string/tv_reserva"
-        tools:layout="@layout/fragment_Reservas" />
+        tools:layout="@layout/fragment_consultar_reserva" >/>
+    </fragment>
+
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="dev.localiza.rentcar.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_cadastro"
+        android:name="dev.localiza.rentcar.ui.cadastro.CadastroFragment"
         android:label="@string/tv_cadastro"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_cadastro" />
 </navigation>
