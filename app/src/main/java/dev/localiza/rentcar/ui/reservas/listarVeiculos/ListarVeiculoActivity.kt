@@ -1,4 +1,4 @@
-package dev.localiza.rentcar.ui.reservas.escolherVeiculos
+package dev.localiza.rentcar.ui.reservas.listarVeiculos
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,25 +7,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.model.*
-import dev.localiza.rentcar.ui.reservas.escolherVeiculos.adapter.SelecionarVeiculoAdapter
-import kotlinx.android.synthetic.main.activity_selecionar_veiculo.*
+import dev.localiza.rentcar.ui.reservas.listarVeiculos.adapter.ListarVeiculoAdapter
+import kotlinx.android.synthetic.main.activity_listar_veiculo.*
 
-class SelecionarVeiculoActivity : AppCompatActivity() {
+class ListarVeiculoActivity : AppCompatActivity() {
 
-    private lateinit var selecionarVeiculoViewModel: EscolherVeiculoViewModel
+    private lateinit var listarVeiculoViewModel: EscolherVeiculoViewModel
 
-    private val selecionarVeiculoAdapter by lazy { SelecionarVeiculoAdapter() }
+    private val listarVeiculoAdapter by lazy { ListarVeiculoAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_selecionar_veiculo)
+        setContentView(R.layout.activity_listar_veiculo)
 
         setupView()
     }
 
     private fun setupView() {
         rvVeiculos.layoutManager = LinearLayoutManager(this)
-        rvVeiculos.adapter = selecionarVeiculoAdapter
+        rvVeiculos.adapter = listarVeiculoAdapter
 
         val veiculo = Veiculo("ABC",
             45.0,
@@ -65,7 +65,7 @@ class SelecionarVeiculoActivity : AppCompatActivity() {
 
         val listaVeiculos = listOf(veiculo, veiculo2, veiculo3)
 
-        selecionarVeiculoAdapter.submitList(listaVeiculos)
+        listarVeiculoAdapter.submitList(listaVeiculos)
     }
 
     override fun onStart() {

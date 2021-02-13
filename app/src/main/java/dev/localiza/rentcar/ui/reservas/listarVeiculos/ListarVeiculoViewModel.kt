@@ -1,4 +1,4 @@
-package dev.localiza.rentcar.ui.reservas.escolherVeiculos
+package dev.localiza.rentcar.ui.reservas.listarVeiculos
 
 import androidx.lifecycle.ViewModel
 

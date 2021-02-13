@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import dev.localiza.rentcar.R
-import dev.localiza.rentcar.ui.reservas.escolherVeiculos.SelecionarVeiculoActivity
+import dev.localiza.rentcar.ui.reservas.listarVeiculos.ListarVeiculoActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
 
     private fun setupView() {
         btReservar.setOnClickListener {
-            val intent = Intent(requireContext(), SelecionarVeiculoActivity::class.java)
+            val intent = Intent(requireContext(), ListarVeiculoActivity::class.java)
             startActivity(intent)
         }
     }

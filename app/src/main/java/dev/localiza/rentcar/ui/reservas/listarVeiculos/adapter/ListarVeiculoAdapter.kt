@@ -1,4 +1,4 @@
-package dev.localiza.rentcar.ui.reservas.escolherVeiculos.adapter
+package dev.localiza.rentcar.ui.reservas.listarVeiculos.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +10,13 @@ import com.bumptech.glide.Glide
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.model.CategoriaEnum
 import dev.localiza.rentcar.model.Veiculo
-import kotlinx.android.synthetic.main.item_selecionar_veiculo.view.*
+import kotlinx.android.synthetic.main.item_listar_veiculo.view.*
 
 
-internal class SelecionarVeiculoAdapter : ListAdapter<Veiculo, SelecionarVeiculoAdapter.ViewHolder>(DIFF_CALLBACK) {
+internal class ListarVeiculoAdapter : ListAdapter<Veiculo, ListarVeiculoAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_selecionar_veiculo, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_listar_veiculo, parent, false)
         return ViewHolder(view)
     }
 

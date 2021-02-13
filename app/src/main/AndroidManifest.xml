@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.reservas.escolherVeiculos.SelecionarVeiculoActivity"
+            android:name=".ui.reservas.listarVeiculos.ListarVeiculoActivity"
             android:screenOrientation="portrait"
             >
         </activity>
