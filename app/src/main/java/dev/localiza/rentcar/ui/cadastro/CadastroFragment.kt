@@ -19,12 +19,12 @@ class CadastroFragment : Fragment() {
     ): View? {
         cadastroViewModel =
                 ViewModelProvider(this).get(CadastroViewModel::class.java)
-       setupView()
+        inicializarView()
 
         return inflater.inflate(R.layout.fragment_cadastro, container, false)
     }
 
-    private fun setupView() {
+    private fun inicializarView() {
 
     }
 }

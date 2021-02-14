@@ -1,6 +1,7 @@
 package dev.localiza.rentcar.model
 
 data class Veiculo (
+        val id: Int,
         val placa: String,
         val valorHora: Double,
         val capacidadeTanqueCombustivel: Int,

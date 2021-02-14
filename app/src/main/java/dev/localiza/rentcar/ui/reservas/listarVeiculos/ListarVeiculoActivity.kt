@@ -20,14 +20,14 @@ class ListarVeiculoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listar_veiculo)
 
-        setupView()
+        inicializarView()
     }
 
-    private fun setupView() {
+    private fun inicializarView() {
         rvVeiculos.layoutManager = LinearLayoutManager(this)
         rvVeiculos.adapter = listarVeiculoAdapter
 
-        val veiculo = Veiculo("ABC",
+        val veiculo = Veiculo(1,"ABC",
             45.0,
             50,
             2,
@@ -39,7 +39,7 @@ class ListarVeiculoActivity : AppCompatActivity() {
             "https://revistacarro.com.br/wp-content/uploads/2018/05/chevrolet_onix_joy1.png"
         )
 
-        val veiculo2 = Veiculo("ABC",
+        val veiculo2 = Veiculo(2,"ABC",
             45.0,
             50,
             2,
@@ -51,7 +51,7 @@ class ListarVeiculoActivity : AppCompatActivity() {
             "https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
         )
 
-        val veiculo3 = Veiculo("ABC",
+        val veiculo3 = Veiculo(3,"ABC",
             45.0,
             50,
             2,

@@ -15,10 +15,14 @@
     <string name="tv_marcaCard">Marca</string>
     <string name="tv_modeloCard">Modelo</string>
     <string name="tv_preco">R$ 99,00</string>
-    <string name="btn_IrDetalhes">Quero Esse</string>
+    <string name="btn_IrDetalhes">Selecionar</string>
     <string name="tv_AC">AC</string>
     <string name="tv_malas">2</string>
     <string name="tv_passageiros">5</string>
-
+    <string name="tv_tituloRetirada">Preencha as informações abaixo:</string>
+    <string name="tv_agenciaRetirada">Agência de retirada</string>
+    <string name="tv_agenciaDevolucao">Agência de devolução</string>
+    <string name="btn_continuar">Continuar</string>
+    <string name="btn_confirmar">Confirmar</string>
 
 </resources>
