@@ -59,6 +59,16 @@
         <item name="android:paddingBottom">5dp</item>
     </style>
 
+    <style name="ButtonPrimary.Toggle4">
+        <item name="backgroundTint">@color/white</item>
+        <item name="strokeColor">@color/verde_contraste</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
     <style name="FormInputAutoComplete">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/cinza_escuro</item>

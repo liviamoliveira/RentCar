@@ -1,12 +1,15 @@
 package dev.localiza.rentcar.ui.reservas.listarVeiculos.adapter
 
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.ViewTarget
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.model.CategoriaEnum
 import dev.localiza.rentcar.model.Veiculo
@@ -24,24 +27,34 @@ internal class ListarVeiculoAdapter : ListAdapter<Veiculo, ListarVeiculoAdapter.
         val item = getItem(position)
         with(holder.itemView) {
 
-            tvMarcaVeiculo.text = item.marca.nome
-            tvModeloVeiculo.text = item.modelo.nome
-            tvMala.text = item.capacidadePortaMalas.toString()
-            tvCategoriaVeiculo.text = tipoCategoriaDescricao(item.categoria)
+            popularDados(item)
+            carregarImagem(item)
 
+            btIrDetalhes.setOnClickListener {
 
-            Glide.with(this).load(item.urlVeiculo)
-                .placeholder(R.drawable.ic_logo)
-                .into(ivCarro)
+            }
 
         }
     }
 
+    private fun View.carregarImagem(item: Veiculo): ViewTarget<ImageView, Drawable> {
+        return Glide.with(this).load(item.urlVeiculo)
+            .placeholder(R.drawable.ic_logo)
+            .into(ivCarro)
+    }
+
+    private fun View.popularDados(item: Veiculo) {
+        tvMarcaVeiculo.text = item.marca.nome
+        tvModeloVeiculo.text = item.modelo.nome
+        tvMala.text = item.capacidadePortaMalas.toString()
+        tvCategoriaVeiculo.text = tipoCategoriaDescricao(item.categoria)
+    }
+
     private fun tipoCategoriaDescricao(categoria: CategoriaEnum): String {
         return when (categoria) {
-            CategoriaEnum.BASICO -> "Básico - "
-            CategoriaEnum.COMPLETO -> "Completo - "
-            else -> "Luxo - "
+            CategoriaEnum.BASICO -> "Básico -"
+            CategoriaEnum.COMPLETO -> "Completo -"
+            else -> "Luxo -"
         }
     }
 

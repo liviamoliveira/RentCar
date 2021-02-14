@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
 
     private fun inicializarView() {
         btReservar.setOnClickListener {
-            val intent = Intent(requireContext(), DetalharReservasActivity::class.java)
+            val intent = Intent(requireContext(), ListarVeiculoActivity::class.java)
             startActivity(intent)
         }
     }

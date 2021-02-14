@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginTop="16dp"
-        android:elevation="20dp"
+        app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +100,7 @@
 
             <Button
                 android:id="@+id/btIrDetalhes"
-                style="@style/ButtonPrimary.Toggle3"
+                style="@style/ButtonPrimary.Toggle4"
                 android:layout_width="130dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"

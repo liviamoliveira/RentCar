@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,20 +12,36 @@
         android:layout_height="match_parent"
         android:background="@drawable/shape_interno">
 
+
         <TextView
-            android:id="@+id/tvCategoriaVeiculo"
+            android:id="@+id/tvTitulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="130dp"
-            android:text="Luxo"
-            android:textColor="@color/cinza_escuro"
+            android:text="Detalhes do Veículo"
+            android:textAllCaps="true"
+            android:textColor="@color/verde_contraste"
             android:textSize="18dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvCategoriaVeiculo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Luxo"
+            android:textColor="@color/cinza_escuro"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
         <TextView
             android:id="@+id/tvMarcaVeiculo"
@@ -49,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="59dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="64dp"
             android:src="@drawable/ic_logo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +90,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:gravity="center"
             android:orientation="horizontal"
@@ -140,7 +154,7 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/shape_retangulo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -205,7 +219,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="48dp"
             android:paddingRight="10dp"
             android:text="Valor total:"
             android:textColor="@color/verde_contraste"
@@ -219,6 +233,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
             android:paddingRight="10dp"
             android:text="R$ 250,00"
             android:textColor="@color/verde_contraste"
@@ -235,7 +250,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:width="350dp"
             android:height="70dp"
@@ -250,4 +265,4 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
