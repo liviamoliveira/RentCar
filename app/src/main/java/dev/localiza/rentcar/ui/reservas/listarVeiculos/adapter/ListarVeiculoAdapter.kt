@@ -14,9 +14,14 @@ import dev.localiza.rentcar.R
 import dev.localiza.rentcar.model.CategoriaEnum
 import dev.localiza.rentcar.model.Veiculo
 import kotlinx.android.synthetic.main.item_listar_veiculo.view.*
+import kotlinx.android.synthetic.main.item_listar_veiculo.view.ivCarro
+import kotlinx.android.synthetic.main.item_listar_veiculo.view.tvCategoriaVeiculo
+import kotlinx.android.synthetic.main.item_listar_veiculo.view.tvMala
+import kotlinx.android.synthetic.main.item_listar_veiculo.view.tvMarcaVeiculo
+import kotlinx.android.synthetic.main.item_listar_veiculo.view.tvModeloVeiculo
 
 
-internal class ListarVeiculoAdapter : ListAdapter<Veiculo, ListarVeiculoAdapter.ViewHolder>(DIFF_CALLBACK) {
+internal class ListarVeiculoAdapter(private val onSelect: (Veiculo) -> Unit) : ListAdapter<Veiculo, ListarVeiculoAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_listar_veiculo, parent, false)
@@ -31,7 +36,7 @@ internal class ListarVeiculoAdapter : ListAdapter<Veiculo, ListarVeiculoAdapter.
             carregarImagem(item)
 
             btIrDetalhes.setOnClickListener {
-
+                onSelect(item)
             }
 
         }
@@ -48,6 +53,7 @@ internal class ListarVeiculoAdapter : ListAdapter<Veiculo, ListarVeiculoAdapter.
         tvModeloVeiculo.text = item.modelo.nome
         tvMala.text = item.capacidadePortaMalas.toString()
         tvCategoriaVeiculo.text = tipoCategoriaDescricao(item.categoria)
+        tvPreco.text =  "R$ " + "%.2f".format(item.valorHora).replace(".",",")
     }
 
     private fun tipoCategoriaDescricao(categoria: CategoriaEnum): String {

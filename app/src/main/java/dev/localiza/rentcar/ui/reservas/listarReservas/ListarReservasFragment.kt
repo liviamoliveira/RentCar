@@ -5,27 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import dev.localiza.rentcar.R
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ListarReservasFragment : Fragment() {
 
-    private lateinit var listarReservasViewModel: ListarReservasViewModel
+    private val viewModel by viewModel<ListarReservasViewModel>()
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        listarReservasViewModel =
-                ViewModelProvider(this).get(ListarReservasViewModel::class.java)
-
-        inicializarView()
-
         return inflater.inflate(R.layout.fragment_listar_reservas, container, false)
     }
 
-    private fun inicializarView() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        eventosClique()
+    }
+
+    private fun eventosClique() {
 
     }
 }

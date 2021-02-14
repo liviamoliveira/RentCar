@@ -9,9 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import dev.localiza.rentcar.R
-import dev.localiza.rentcar.ui.reservas.detalharReservas.DetalharReservasActivity
 import dev.localiza.rentcar.ui.reservas.listarVeiculos.ListarVeiculoActivity
-import dev.localiza.rentcar.ui.reservas.reservarVeiculos.ReservarVeiculosActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -24,10 +22,10 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        inicializarView()
+        eventosClique()
     }
 
-    private fun inicializarView() {
+    private fun eventosClique() {
         btReservar.setOnClickListener {
             val intent = Intent(requireContext(), ListarVeiculoActivity::class.java)
             startActivity(intent)

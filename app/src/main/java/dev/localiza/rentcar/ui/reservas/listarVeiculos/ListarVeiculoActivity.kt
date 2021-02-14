@@ -1,5 +1,6 @@
 package dev.localiza.rentcar.ui.reservas.listarVeiculos
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -9,21 +10,39 @@ import dev.localiza.rentcar.R
 import dev.localiza.rentcar.model.*
 import dev.localiza.rentcar.ui.reservas.listarVeiculos.adapter.ListarVeiculoAdapter
 import kotlinx.android.synthetic.main.activity_listar_veiculo.*
+import androidx.lifecycle.Observer
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import dev.localiza.rentcar.ui.reservas.detalharReservas.DetalharReservasActivity
 
 class ListarVeiculoActivity : AppCompatActivity() {
 
-    private lateinit var listarVeiculoViewModel: EscolherVeiculoViewModel
+    private val viewModel by viewModel<EscolherVeiculoViewModel>()
 
-    private val listarVeiculoAdapter by lazy { ListarVeiculoAdapter() }
+    private val listarVeiculoAdapter by lazy { ListarVeiculoAdapter{
+        viewModel.selecaoVeiculo(it)
+    }}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listar_veiculo)
 
-        inicializarView()
+        eventosClique()
+        observers()
     }
 
-    private fun inicializarView() {
+    private fun observers() {
+        viewModel.selecaoVeiculo.observe(this, Observer {veiculo ->
+            irParaDetalhesReserva(veiculo)
+        })
+    }
+
+    private fun irParaDetalhesReserva(veiculo: Veiculo?) {
+        val intent = Intent(this, DetalharReservasActivity::class.java)
+        intent.putExtra(PARAM_VEICULO, veiculo)
+        startActivity(intent)
+    }
+
+    private fun eventosClique() {
         rvVeiculos.layoutManager = LinearLayoutManager(this)
         rvVeiculos.adapter = listarVeiculoAdapter
 
@@ -40,7 +59,7 @@ class ListarVeiculoActivity : AppCompatActivity() {
         )
 
         val veiculo2 = Veiculo(2,"ABC",
-            45.0,
+            65.0,
             50,
             2,
             MarcaVeiculo("FIAT"),
@@ -52,7 +71,7 @@ class ListarVeiculoActivity : AppCompatActivity() {
         )
 
         val veiculo3 = Veiculo(3,"ABC",
-            45.0,
+            150.0,
             50,
             2,
             MarcaVeiculo("MERCEDES-BENZ"),
@@ -78,4 +97,7 @@ class ListarVeiculoActivity : AppCompatActivity() {
         window?.statusBarColor = Color.TRANSPARENT
     }
 
+    companion object {
+        private const val PARAM_VEICULO = "PARAM_VEICULO"
+    }
 }

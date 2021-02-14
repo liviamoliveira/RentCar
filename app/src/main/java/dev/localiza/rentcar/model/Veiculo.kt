@@ -1,5 +1,9 @@
 package dev.localiza.rentcar.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Veiculo (
         val id: Int,
         val placa: String,
@@ -12,7 +16,7 @@ data class Veiculo (
         val categoria: CategoriaEnum,
         val combustivel: CombustivelEnum,
         val urlVeiculo: String
-)
+): Parcelable
 
 enum class CategoriaEnum {
         BASICO,
