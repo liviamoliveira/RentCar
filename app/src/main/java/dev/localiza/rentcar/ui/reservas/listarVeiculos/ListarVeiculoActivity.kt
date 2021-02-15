@@ -38,6 +38,7 @@ class ListarVeiculoActivity : AppCompatActivity() {
 
     private fun irParaDetalhesReserva(veiculo: Veiculo?) {
         val intent = Intent(this, DetalharReservasActivity::class.java)
+        intent.putExtra(PARAM_MINHAS_RESERVAS, false)
         intent.putExtra(PARAM_VEICULO, veiculo)
         startActivity(intent)
     }
@@ -99,5 +100,6 @@ class ListarVeiculoActivity : AppCompatActivity() {
 
     companion object {
         private const val PARAM_VEICULO = "PARAM_VEICULO"
+        private const val PARAM_MINHAS_RESERVAS = "PARAM_MINHAS_RESERVAS"
     }
 }

@@ -39,6 +39,14 @@
             android:name=".ui.reservas.detalharReservas.DetalharReservasActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name=".ui.reservas.informarDadosCadastro.InformarDadosReservaActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.reservas.confirmarReserva.ConfirmarReservaActivity"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

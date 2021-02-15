@@ -1,28 +1,58 @@
 <resources>
     <string name="app_name">G6- RentCar</string>
-    <string name="tv_home">INÍCIO</string>
-    <string name="tv_reserva">RESERVAS</string>
-    <string name="tv_cadastro">CADASTRO</string>
-    <string name="tv_buttonHome">ALUGUE UM VEÍCULO</string>
+
+    <string name="menu_inicio">INÍCIO</string>
+    <string name="menu_reserva">RESERVAS</string>
+    <string name="menu_perfil">PERFIL</string>
+
     <string name="et_cpf">CPF</string>
-    <string name="btn_consultar">CONSULTAR</string>
-    <string name="btn_criarreserva">CRIAR RESERVA</string>
+    <string name="et_nome">Nome</string>
+    <string name="et_dataNascimento">Data de Nascimento</string>
+    <string name="et_email">E-mail</string>
+    <string name="et_celular">Celular</string>
+    <string name="et_cep">CEP</string>
+    <string name="et_Endereco">Endereço</string>
+    <string name="et_numero">Nº</string>
+    <string name="et_bairro">Bairro</string>
+    <string name="et_estado">Estado</string>
+    <string name="et_cidade">Cidade</string>
+    <string name="et_complemento">Complemento</string>
+
     <string name="tv_saudacao">Olá!</string>
-    <string name="tv_txReserva">Digite o seu CPF para consultar suas reservas.</string>
-    <string name="tv_saudacaoVeiculo">Selecione o veículo</string>
-    <string name="iv_fotoCarro">Foto Carro</string>
+    <string name="tv_reserva">Digite o seu CPF para consultar suas reservas.</string>
+    <string name="tv_tituloVeiculo">Selecione o veículo</string>
     <string name="tv_categoriaCard">Categoria</string>
     <string name="tv_marcaCard">Marca</string>
     <string name="tv_modeloCard">Modelo</string>
-    <string name="tv_preco">R$ 99,00</string>
-    <string name="btn_IrDetalhes">Selecionar</string>
+    <string name="iv_fotoCarro">Foto Carro</string>
     <string name="tv_AC">AC</string>
     <string name="tv_malas">2</string>
     <string name="tv_passageiros">5</string>
+    <string name="tv_preco">R$ 99,00</string>
+    <string name="tv_valorTotal">Valor total:</string>
+    <string name="tv_tituloDetalheVeiculo">Detalhes do Veículo</string>
     <string name="tv_tituloRetirada">Preencha as informações abaixo:</string>
-    <string name="tv_agenciaRetirada">Agência de retirada</string>
-    <string name="tv_agenciaDevolucao">Agência de devolução</string>
-    <string name="btn_continuar">Continuar</string>
-    <string name="btn_confirmar">Confirmar</string>
+    <string name="tv_agenciaRetirada">Agência de retirada:</string>
+    <string name="tv_agenciaDevolucao">Agência de devolução:</string>
+    <string name="tv_preenchaosDados">Preencha os dados</string>
+    <string name="tv_dadosPessoais">Dados Pessoais</string>
+    <string name="tv_endereco">Endereço</string>
+    <string name="tv_sucesso">Reserva confimada!</string>
+    <string name="tv_numeroReserva">Numero da sua reserva</string>
+    <string name="tv_numeroReservaEx">012345678</string>
+    <string name="tv_msgmMotivacional">G6-Rent a Car</string>
+    <string name="tv_msgmMotivacionalcontinuacao">Para quem deseja acertar o caminho!</string>
+    <string name="tv_tituloMinhasReserva">Minhas reservas</string>
+    <string name="tv_nomeAgencia">Agencia Cristiano Machado</string>
+    <string name="tv_dataRetiradaDevolucao">20 fevereiro de 2020 - 25 fevereiro de 2020</string>
+
+    <string name="btn_alugar">ALUGUE UM VEÍCULO</string>
+    <string name="btn_confirmar">CONFIRMAR</string>
+    <string name="btn_confirmarReserva">CONFIRMAR RESERVA</string>
+    <string name="btn_continuar">CONTINUAR</string>
+    <string name="btn_IrDetalhes">SELECIONAR</string>
+    <string name="btn_consultar">CONSULTAR</string>
+    <string name="btn_criarreserva">CRIAR RESERVA</string>
+    <string name="btn_ok">OK</string>
 
 </resources>

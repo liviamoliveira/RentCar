@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-    <ScrollView
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -21,10 +20,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/tv_saudacaoVeiculo"
+                android:text="@string/tv_tituloVeiculo"
                 android:textAllCaps="true"
                 android:textColor="@color/verde_contraste"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

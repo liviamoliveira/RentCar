@@ -41,7 +41,7 @@
                 android:height="70dp"
                 android:backgroundTint="@color/white"
                 android:drawableLeft="@drawable/ic_car_icon"
-                android:text="@string/tv_buttonHome"
+                android:text="@string/btn_alugar"
                 android:textColor="@color/verde_contraste"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"

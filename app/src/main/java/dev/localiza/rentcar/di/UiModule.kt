@@ -2,8 +2,10 @@ package dev.localiza.rentcar.di
 
 import dev.localiza.rentcar.ui.cadastro.CadastroViewModel
 import dev.localiza.rentcar.ui.home.HomeViewModel
+import dev.localiza.rentcar.ui.reservas.confirmarReserva.ConfirmarReservaViewModel
 import dev.localiza.rentcar.ui.reservas.consultar.ConsultarReservaViewModel
 import dev.localiza.rentcar.ui.reservas.detalharReservas.DetalharReservasViewModel
+import dev.localiza.rentcar.ui.reservas.informarDadosCadastro.InformarDadosReservaViewModel
 import dev.localiza.rentcar.ui.reservas.listarReservas.ListarReservasViewModel
 import dev.localiza.rentcar.ui.reservas.listarVeiculos.EscolherVeiculoViewModel
 import dev.localiza.rentcar.ui.reservas.reservarVeiculos.ReservarVeiculosViewModel
@@ -18,4 +20,6 @@ val uiModule = module {
     viewModel { ListarReservasViewModel() }
     viewModel { ReservarVeiculosViewModel() }
     viewModel { EscolherVeiculoViewModel() }
+    viewModel { InformarDadosReservaViewModel() }
+    viewModel { ConfirmarReservaViewModel() }
 }

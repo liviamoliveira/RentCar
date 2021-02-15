@@ -12,15 +12,15 @@
 
     <fragment
         android:id="@+id/navigation_reserva"
-        android:name="dev.localiza.rentcar.ui.reservas.consultar.ConsultarReservaFragment"
-        android:label="@string/tv_reserva"
-        tools:layout="@layout/fragment_consultar_reserva" >/>
+        android:name="dev.localiza.rentcar.ui.reservas.listarReservas.ListarReservasFragment"
+        android:label="@string/menu_reserva"
+        tools:layout="@layout/fragment_listar_reservas">/>
     </fragment>
 
 
     <fragment
         android:id="@+id/navigation_cadastro"
         android:name="dev.localiza.rentcar.ui.cadastro.CadastroFragment"
-        android:label="@string/tv_cadastro"
+        android:label="@string/menu_perfil"
         tools:layout="@layout/fragment_cadastro" />
 </navigation>

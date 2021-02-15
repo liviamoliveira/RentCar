@@ -27,10 +27,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/tv_categoriaCard"
+                tools:text="@string/tv_categoriaCard"
                 android:textColor="@color/cinza_escuro"
                 android:textStyle="bold"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,10 +39,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/tv_marcaCard"
+                tools:text="@string/tv_marcaCard"
                 android:textColor="@color/cinza_escuro"
                 android:textStyle="bold"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/tvCategoriaVeiculo"
                 app:layout_constraintStart_toEndOf="@+id/tvCategoriaVeiculo"
                 app:layout_constraintTop_toTopOf="@+id/tvCategoriaVeiculo" />
@@ -53,9 +53,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/tv_modeloCard"
+                tools:text="@string/tv_modeloCard"
                 android:textColor="@color/cinza_claro"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvMarcaVeiculo" />
 
@@ -91,9 +91,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/tv_preco"
+                tools:text="@string/tv_preco"
                 android:textColor="@color/cinza_escuro"
-                android:textSize="22dp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/ivRetangulo"
                 app:layout_constraintTop_toTopOf="@+id/ivRetangulo" />

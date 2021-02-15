@@ -5,18 +5,18 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_inicio"
         android:iconTint="@color/verde_contraste"
-        android:title="@string/tv_home" />
+        android:title="@string/menu_inicio" />
 
     <item
         android:id="@+id/navigation_reserva"
         android:icon="@drawable/ic_reservas"
         android:iconTint="@color/verde_contraste"
-        android:title="@string/tv_reserva" />
+        android:title="@string/menu_reserva" />
 
     <item
         android:id="@+id/navigation_cadastro"
         android:icon="@drawable/ic_cadastrar"
         android:iconTint="@color/verde_contraste"
-        android:title="@string/tv_cadastro" />
+        android:title="@string/menu_perfil" />
 
 </menu>

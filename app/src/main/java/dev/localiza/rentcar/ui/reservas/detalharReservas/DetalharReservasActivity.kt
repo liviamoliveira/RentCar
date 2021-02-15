@@ -1,16 +1,18 @@
 package dev.localiza.rentcar.ui.reservas.detalharReservas
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.model.CategoriaEnum
 import dev.localiza.rentcar.model.Veiculo
+import dev.localiza.rentcar.ui.reservas.informarDadosCadastro.InformarDadosReservaActivity
 import kotlinx.android.synthetic.main.activity_detalhar_veiculo.*
-import kotlinx.android.synthetic.main.item_listar_veiculo.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetalharReservasActivity : AppCompatActivity() {
@@ -33,7 +35,13 @@ class DetalharReservasActivity : AppCompatActivity() {
 
 
     private fun eventosClique() {
-
+        btnConfirmarReserva.setOnClickListener {
+            val intent = Intent(this, InformarDadosReservaActivity::class.java)
+            startActivity(intent)
+        }
+        btnMinhasReserva.setOnClickListener {
+         finish()
+        }
     }
 
     private fun observers() {
@@ -46,6 +54,10 @@ class DetalharReservasActivity : AppCompatActivity() {
             Glide.with(this).load(veiculo.urlVeiculo)
                 .placeholder(R.drawable.ic_logo)
                 .into(ivCarro)
+        })
+        viewModel.exibirBotao.observe(this, Observer {exibir ->
+           btnMinhasReserva.isVisible = exibir
+           btnConfirmarReserva.isVisible = !exibir
         })
     }
 
@@ -64,10 +76,12 @@ class DetalharReservasActivity : AppCompatActivity() {
 
     fun parametrosIniciais() {
         val veiculo = intent.getParcelableExtra<Veiculo>(PARAM_VEICULO) ?: return
-        viewModel.exibirVeiculo(veiculo)
+        val exibirBotao = intent.getBooleanExtra(PARAM_MINHAS_RESERVAS,false)
+        viewModel.init(veiculo,exibirBotao)
     }
 
     companion object {
         private const val PARAM_VEICULO = "PARAM_VEICULO"
+        private const val PARAM_MINHAS_RESERVAS = "PARAM_MINHAS_RESERVAS"
     }
 }

@@ -7,8 +7,10 @@ import dev.localiza.rentcar.model.Veiculo
 class DetalharReservasViewModel : ViewModel() {
 
     val exibirVeiculo = MutableLiveData<Veiculo>()
+    val exibirBotao = MutableLiveData<Boolean>()
 
-    fun exibirVeiculo(veiculo: Veiculo) {
+    fun init(veiculo: Veiculo, visibilidadeBotao: Boolean) {
         exibirVeiculo.value = veiculo
+        exibirBotao.value = visibilidadeBotao
     }
 }
