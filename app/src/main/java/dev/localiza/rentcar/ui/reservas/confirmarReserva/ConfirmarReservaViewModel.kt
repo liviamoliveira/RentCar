@@ -1,7 +1,7 @@
 package dev.localiza.rentcar.ui.reservas.confirmarReserva
 
-import androidx.lifecycle.ViewModel
+import dev.localiza.rentcar.base.BaseViewModel
 
-class ConfirmarReservaViewModel : ViewModel() {
+class ConfirmarReservaViewModel : BaseViewModel() {
 
 }

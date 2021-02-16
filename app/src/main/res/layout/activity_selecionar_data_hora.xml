@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_gradient"
+            android:paddingTop="35dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_interno">
+
+            <TextView
+                android:id="@+id/tvTituloDataHora"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="54dp"
+                android:text="@string/tv_tituloDataHora"
+                android:textAllCaps="true"
+                android:textColor="@color/verde_contraste"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivRetanguloAgencia"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/shape_retangulo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTituloDataHora" />
+
+            <ImageView
+                android:id="@+id/ivSeta"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/ic_loja"
+                app:layout_constraintStart_toStartOf="@+id/ivRetanguloAgencia"
+                app:layout_constraintTop_toTopOf="@+id/ivRetanguloAgencia" />
+
+
+            <TextView
+                android:id="@+id/tvDetalhesRetirada"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:paddingRight="10dp"
+                android:textAllCaps="true"
+                android:textColor="@color/cinza_escuro"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivSeta"
+                app:layout_constraintEnd_toEndOf="@+id/ivRetanguloAgencia"
+                app:layout_constraintStart_toEndOf="@+id/ivSeta"
+                app:layout_constraintTop_toTopOf="@+id/ivSeta"
+                tools:text="@string/tv_agenciaRetirada" />
+
+            <ImageView
+                android:id="@+id/ivSetaDevolucao"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/ic_loja"
+                app:layout_constraintBottom_toBottomOf="@+id/ivRetanguloAgencia"
+                app:layout_constraintStart_toStartOf="@+id/ivRetanguloAgencia"
+                app:layout_constraintTop_toBottomOf="@+id/ivSeta" />
+
+            <TextView
+                android:id="@+id/tvDetalhesDevolucao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:paddingRight="10dp"
+                android:textAllCaps="true"
+                android:textColor="@color/cinza_escuro"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivSetaDevolucao"
+                app:layout_constraintEnd_toEndOf="@+id/ivRetanguloAgencia"
+                app:layout_constraintStart_toEndOf="@+id/ivSetaDevolucao"
+                app:layout_constraintTop_toTopOf="@+id/ivSetaDevolucao"
+                tools:text="@string/tv_agenciaDevolucao" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cdDataRetirada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:minHeight="80dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivRetanguloAgencia">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivCalendario"
+                        android:layout_width="30dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/ic_calendario"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvRetirada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/tv_cdRetirada"
+                        android:textAllCaps="true"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/ivCalendario"
+                        app:layout_constraintTop_toTopOf="@+id/ivCalendario" />
+
+                    <TextView
+                        android:id="@+id/tvDataRetirada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/tv_data"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvRetirada"
+                        app:layout_constraintTop_toBottomOf="@+id/tvRetirada" />
+
+                    <TextView
+                        android:id="@+id/tvDataRetiradaSelecionada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvDataRetirada"
+                        app:layout_constraintTop_toTopOf="@+id/tvDataRetirada"
+                        tools:text="@string/tv_dataSelecionada" />
+
+                    <TextView
+                        android:id="@+id/tvHoraRetirada"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:text="@string/tv_horario"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDataRetiradaSelecionada"
+                        app:layout_constraintStart_toEndOf="@+id/tvDataRetiradaSelecionada"
+                        app:layout_constraintTop_toTopOf="@+id/tvDataRetiradaSelecionada" />
+
+                    <TextView
+                        android:id="@+id/tvHoraRetiradaSelecionada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvHoraRetirada"
+                        app:layout_constraintTop_toTopOf="@+id/tvHoraRetirada"
+                        tools:text="@string/tv_horaSelecionada" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cdDataDevolucao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:minHeight="80dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cdDataRetirada">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivCalendarioDevolucao"
+                        android:layout_width="30dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/ic_calendario"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDevolucao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/tv_cdDevolucao"
+                        android:textAllCaps="true"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/ivCalendarioDevolucao"
+                        app:layout_constraintTop_toTopOf="@+id/ivCalendarioDevolucao" />
+
+                    <TextView
+                        android:id="@+id/tvDataDevolucao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/tv_data"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tvDevolucao"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDevolucao" />
+
+                    <TextView
+                        android:id="@+id/tvDataDevolucaoSelecionada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvDataDevolucao"
+                        app:layout_constraintTop_toTopOf="@+id/tvDataDevolucao"
+                        tools:text="@string/tv_dataSelecionada" />
+
+                    <TextView
+                        android:id="@+id/tvHoraDevolucao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:text="@string/tv_horario"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvDataDevolucaoSelecionada"
+                        app:layout_constraintStart_toEndOf="@+id/tvDataDevolucaoSelecionada"
+                        app:layout_constraintTop_toTopOf="@+id/tvDataDevolucaoSelecionada" />
+
+                    <TextView
+                        android:id="@+id/tvHoraDevolucaoSelecionada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/cinza_escuro"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toEndOf="@+id/tvHoraDevolucao"
+                        app:layout_constraintTop_toTopOf="@+id/tvHoraDevolucao"
+                        tools:text="@string/tv_horaSelecionada" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/btAvancar"
+                style="@style/BotaoPrimario.Toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="32dp"
+                android:width="350dp"
+                android:height="70dp"
+                android:backgroundTint="@color/verde_contraste"
+                android:text="@string/btn_avancar"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cdDataDevolucao" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

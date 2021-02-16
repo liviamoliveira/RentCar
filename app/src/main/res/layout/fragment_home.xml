@@ -6,12 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/shape_gradient"
-        android:orientation="vertical"
         android:paddingTop="35dp">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -31,12 +37,12 @@
 
             <Button
                 android:id="@+id/btReservar"
-                style="@style/ButtonPrimary.Toggle"
+                style="@style/BotaoPrimario.Toggle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="70dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="24dp"
                 android:width="350dp"
                 android:height="70dp"
                 android:backgroundTint="@color/white"
@@ -51,5 +57,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
+    </ScrollView>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

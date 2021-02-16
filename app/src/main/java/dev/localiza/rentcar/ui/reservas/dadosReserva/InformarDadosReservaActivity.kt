@@ -1,4 +1,4 @@
-package dev.localiza.rentcar.ui.reservas.informarDadosCadastro
+package dev.localiza.rentcar.ui.reservas.dadosReserva
 
 import android.content.Intent
 import android.graphics.Color

@@ -32,19 +32,23 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".ui.reservas.reservarVeiculos.ReservarVeiculosActivity"
+            android:name=".ui.reservas.listarAgenciaReserva.ListarAgenciaActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".ui.reservas.detalharReservas.DetalharReservasActivity"
+            android:name=".ui.reservas.detalharReserva.DetalharReservasActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".ui.reservas.informarDadosCadastro.InformarDadosReservaActivity"
+            android:name=".ui.reservas.dadosReserva.InformarDadosReservaActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".ui.reservas.confirmarReserva.ConfirmarReservaActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".ui.reservas.selecionarDataHoraReserva.SelecionarDataHoraActivity"
             android:screenOrientation="portrait">
         </activity>
     </application>

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
@@ -83,32 +89,31 @@
                 tools:text="@string/tv_numeroReservaEx" />
 
             <TextView
-                android:id="@+id/tvTextomotivacional"
+                android:id="@+id/tvTextomotivacional2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/tv_msgmMotivacional"
+                android:layout_marginTop="48dp"
+                android:text="@string/tv_msgmMotivacionalcontinuacao"
                 android:textColor="@color/cinza_escuro"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivRetangulo" />
 
-            <TextView
-                android:id="@+id/tvTextomotivacional2"
-                android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/ivG6"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/tv_msgmMotivacionalcontinuacao"
-                android:textColor="@color/cinza_escuro"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTextomotivacional" />
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:src="@drawable/ic_g6"
+                app:layout_constraintEnd_toEndOf="@+id/tvTextomotivacional2"
+                app:layout_constraintStart_toStartOf="@+id/tvTextomotivacional2"
+                app:layout_constraintTop_toBottomOf="@+id/tvTextomotivacional2" />
 
             <Button
                 android:id="@+id/btOk"
-                style="@style/ButtonPrimary.Toggle"
+                style="@style/BotaoPrimario.Toggle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -116,16 +121,15 @@
                 android:layout_marginEnd="16dp"
                 android:width="350dp"
                 android:height="70dp"
-                android:backgroundTint="@color/verde_contraste"
+                android:backgroundTint="@color/white"
                 android:text="@string/btn_ok"
-                android:textColor="@color/white"
+                android:textColor="@color/verde_contraste"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTextomotivacional2" />
-
+                app:layout_constraintTop_toBottomOf="@+id/ivG6" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

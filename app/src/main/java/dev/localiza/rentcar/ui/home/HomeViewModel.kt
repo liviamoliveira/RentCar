@@ -1,9 +1,9 @@
 package dev.localiza.rentcar.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+import dev.localiza.rentcar.base.BaseViewModel
+
+internal class HomeViewModel() : BaseViewModel() {
+
 
 }

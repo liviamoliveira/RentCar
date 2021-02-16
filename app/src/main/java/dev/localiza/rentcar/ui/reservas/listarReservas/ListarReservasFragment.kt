@@ -9,10 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.model.*
-import dev.localiza.rentcar.ui.reservas.detalharReservas.DetalharReservasActivity
+import dev.localiza.rentcar.ui.reservas.detalharReserva.DetalharReservasActivity
 import dev.localiza.rentcar.ui.reservas.listarReservas.adapter.ListarReservasAdapter
 import kotlinx.android.synthetic.main.fragment_listar_reservas.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.text.SimpleDateFormat
 import java.util.*
 
 class ListarReservasFragment : Fragment() {
@@ -38,10 +39,11 @@ class ListarReservasFragment : Fragment() {
 
     private fun observers() {
        viewModel.selecaoMinhasReservas.observe(requireActivity(), androidx.lifecycle.Observer {
-           val intent = Intent(requireContext(), DetalharReservasActivity::class.java)
-           intent.putExtra(PARAM_MINHAS_RESERVAS, true)
-           intent.putExtra(PARAM_VEICULO, it.veiculo)
-           startActivity(intent)
+           val simpleDateFormat = SimpleDateFormat("dd MMMM yyyy HH:mm", Locale.getDefault())
+           val dataHoraRetirada = simpleDateFormat.format(it.dataRetirada)
+           val dataHoraDevolucao = simpleDateFormat.format(it.dataDevolucao)
+
+           irParaDetalhesReserva(it, dataHoraRetirada, dataHoraDevolucao)
        })
     }
 
@@ -140,8 +142,23 @@ class ListarReservasFragment : Fragment() {
         listarReservasAdapter.submitList(listaReserva)
     }
 
+    private fun irParaDetalhesReserva(it: Reserva, dataHoraRetirada: String, dataHoraDevolucao: String) {
+        val intent = Intent(requireContext(), DetalharReservasActivity::class.java)
+        intent.putExtra(PARAM_MINHAS_RESERVAS, true)
+        intent.putExtra(PARAM_VEICULO, it.veiculo)
+        intent.putExtra(PARAM_DATA_RETIRADA, dataHoraRetirada)
+        intent.putExtra(PARAM_DATA_DEVOLUCAO, dataHoraDevolucao)
+        intent.putExtra(PARAM_LOCAL_RETIRADA, it.localRetirada.nome)
+        intent.putExtra(PARAM_LOCAL_DEVOLUCAO, it.localDevolucao.nome)
+        startActivity(intent)
+    }
+
     companion object {
         private const val PARAM_VEICULO = "PARAM_VEICULO"
+        private const val PARAM_DATA_RETIRADA = "PARAM_DATA_RETIRADA"
+        private const val PARAM_DATA_DEVOLUCAO = "PARAM_DATA_DEVOLUCAO"
         private const val PARAM_MINHAS_RESERVAS = "PARAM_MINHAS_RESERVAS"
+        private const val PARAM_LOCAL_RETIRADA = "PARAM_LOCAL_RETIRADA"
+        private const val PARAM_LOCAL_DEVOLUCAO = "PARAM_LOCAL_DEVOLUCAO"
     }
 }

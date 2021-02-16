@@ -13,6 +13,7 @@ import com.bumptech.glide.request.target.ViewTarget
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.model.CategoriaEnum
 import dev.localiza.rentcar.model.Veiculo
+import dev.localiza.rentcar.model.VeiculoAgencia
 import kotlinx.android.synthetic.main.item_listar_veiculo.view.*
 import kotlinx.android.synthetic.main.item_listar_veiculo.view.ivCarro
 import kotlinx.android.synthetic.main.item_listar_veiculo.view.tvCategoriaVeiculo
@@ -21,7 +22,7 @@ import kotlinx.android.synthetic.main.item_listar_veiculo.view.tvMarcaVeiculo
 import kotlinx.android.synthetic.main.item_listar_veiculo.view.tvModeloVeiculo
 
 
-internal class ListarVeiculoAdapter(private val onSelect: (Veiculo) -> Unit) : ListAdapter<Veiculo, ListarVeiculoAdapter.ViewHolder>(DIFF_CALLBACK) {
+internal class ListarVeiculoAdapter(private val onSelect: (Veiculo) -> Unit) : ListAdapter<VeiculoAgencia, ListarVeiculoAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_listar_veiculo, parent, false)
@@ -32,11 +33,11 @@ internal class ListarVeiculoAdapter(private val onSelect: (Veiculo) -> Unit) : L
         val item = getItem(position)
         with(holder.itemView) {
 
-            popularDados(item)
-            carregarImagem(item)
+            popularDados(item.veiculo)
+            carregarImagem(item.veiculo)
 
             btIrDetalhes.setOnClickListener {
-                onSelect(item)
+                onSelect(item.veiculo)
             }
 
         }
@@ -66,12 +67,12 @@ internal class ListarVeiculoAdapter(private val onSelect: (Veiculo) -> Unit) : L
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
-    object DIFF_CALLBACK : DiffUtil.ItemCallback<Veiculo>() {
-        override fun areItemsTheSame(oldItem: Veiculo, newItem: Veiculo): Boolean {
-            return oldItem.marca == newItem.marca
+    object DIFF_CALLBACK : DiffUtil.ItemCallback<VeiculoAgencia>() {
+        override fun areItemsTheSame(oldItem: VeiculoAgencia, newItem: VeiculoAgencia): Boolean {
+            return oldItem.veiculId == newItem.veiculId
         }
 
-        override fun areContentsTheSame(oldItem: Veiculo, newItem: Veiculo): Boolean {
+        override fun areContentsTheSame(oldItem: VeiculoAgencia, newItem: VeiculoAgencia): Boolean {
             return oldItem == newItem
         }
     }

@@ -100,7 +100,7 @@
 
             <Button
                 android:id="@+id/btIrDetalhes"
-                style="@style/ButtonPrimary.Toggle4"
+                style="@style/BotaoPrimario.Toggle4"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"

@@ -1,4 +1,4 @@
-package dev.localiza.rentcar.ui.reservas.consultar
+package dev.localiza.rentcar.ui.reservas.consultarReserva
 
 import android.os.Bundle
 import android.view.LayoutInflater

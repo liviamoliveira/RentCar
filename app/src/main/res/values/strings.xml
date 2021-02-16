@@ -11,12 +11,14 @@
     <string name="et_email">E-mail</string>
     <string name="et_celular">Celular</string>
     <string name="et_cep">CEP</string>
-    <string name="et_Endereco">Endereço</string>
+    <string name="et_Endereco">Logradouro</string>
     <string name="et_numero">Nº</string>
     <string name="et_bairro">Bairro</string>
     <string name="et_estado">Estado</string>
     <string name="et_cidade">Cidade</string>
     <string name="et_complemento">Complemento</string>
+    <string name="et_cpfMatricula">CPF ou Matrícula</string>
+    <string name="et_senha">Senha</string>
 
     <string name="tv_saudacao">Olá!</string>
     <string name="tv_reserva">Digite o seu CPF para consultar suas reservas.</string>
@@ -32,27 +34,44 @@
     <string name="tv_valorTotal">Valor total:</string>
     <string name="tv_tituloDetalheVeiculo">Detalhes do Veículo</string>
     <string name="tv_tituloRetirada">Preencha as informações abaixo:</string>
-    <string name="tv_agenciaRetirada">Agência de retirada:</string>
-    <string name="tv_agenciaDevolucao">Agência de devolução:</string>
+    <string name="tv_agenciaRetirada"><b>Retirada:</b> %s</string>
+    <string name="tv_agenciaDevolucao"><b>Devolução:</b> %s</string>
     <string name="tv_preenchaosDados">Preencha os dados</string>
     <string name="tv_dadosPessoais">Dados Pessoais</string>
     <string name="tv_endereco">Endereço</string>
     <string name="tv_sucesso">Reserva confimada!</string>
     <string name="tv_numeroReserva">Numero da sua reserva</string>
     <string name="tv_numeroReservaEx">012345678</string>
+    <string name="tv_msgmMotivacionalcontinuacao">Para onde quer que vá...</string>
     <string name="tv_msgmMotivacional">G6-Rent a Car</string>
-    <string name="tv_msgmMotivacionalcontinuacao">Para quem deseja acertar o caminho!</string>
     <string name="tv_tituloMinhasReserva">Minhas reservas</string>
     <string name="tv_nomeAgencia">Agencia Cristiano Machado</string>
     <string name="tv_dataRetiradaDevolucao">20 fevereiro de 2020 - 25 fevereiro de 2020</string>
+    <string name="tv_tituloDataHora">Selecione data e horário para retirada e devolução</string>
+    <string name="tv_cdRetirada">Selecione retirada</string>
+    <string name="tv_data">Data:</string>
+    <string name="tv_horario">Horário:</string>
+    <string name="tv_cdDevolucao">Selecione devolução</string>
+    <string name="tv_dataSelecionada">20/02/2021</string>
+    <string name="tv_horaSelecionada">10:00</string>
+    <string name="tv_selecioneAgencia">Selecione Agência</string>
+    <string name="tv_subtituloSelecaoAgencia">Onde você deseja retirar seu carro?</string>
+    <string name="tv_tituloLogin">Acesse seu login ou cadastre-se</string>
+    <string name="tv_saudacaoBemVindo">Bem vindo!</string>
+    <string name="tv_esqueciSenha">Esqueci minha senha</string>
+
+
 
     <string name="btn_alugar">ALUGUE UM VEÍCULO</string>
     <string name="btn_confirmar">CONFIRMAR</string>
     <string name="btn_confirmarReserva">CONFIRMAR RESERVA</string>
+    <string name="btn_avancar">AVANÇAR</string>
     <string name="btn_continuar">CONTINUAR</string>
     <string name="btn_IrDetalhes">SELECIONAR</string>
     <string name="btn_consultar">CONSULTAR</string>
     <string name="btn_criarreserva">CRIAR RESERVA</string>
     <string name="btn_ok">OK</string>
+    <string name="btn_entrar">ENTRAR</string>
+    <string name="btn_cadastrar">CADASTRAR</string>
 
 </resources>

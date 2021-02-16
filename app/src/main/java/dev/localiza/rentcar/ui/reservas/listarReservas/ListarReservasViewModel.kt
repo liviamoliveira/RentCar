@@ -1,10 +1,10 @@
 package dev.localiza.rentcar.ui.reservas.listarReservas
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import dev.localiza.rentcar.model.Reserva
+import dev.localiza.rentcar.base.BaseViewModel
 
-class ListarReservasViewModel : ViewModel() {
+class ListarReservasViewModel : BaseViewModel() {
 
     val selecaoMinhasReservas = MutableLiveData<Reserva>()
 

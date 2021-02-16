@@ -1,8 +1,8 @@
 package dev.localiza.rentcar.ui.cadastro
 
-import androidx.lifecycle.ViewModel
+import dev.localiza.rentcar.base.BaseViewModel
 
-class CadastroViewModel : ViewModel() {
+class CadastroViewModel : BaseViewModel() {
 
 
 }
