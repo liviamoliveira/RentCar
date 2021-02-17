@@ -295,25 +295,23 @@
                     android:singleLine="true"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btConfirmarReserva"
-            style="@style/BotaoPrimario.Toggle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="32dp"
-            android:width="350dp"
-            android:height="70dp"
-            android:backgroundTint="@color/verde_contraste"
-            android:text="@string/btn_confirmarReserva"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tilCidade" />
+            <Button
+                android:id="@+id/btConfirmarReserva"
+                style="@style/BotaoPrimario.Toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:width="350dp"
+                android:height="70dp"
+                android:backgroundTint="@color/verde_contraste"
+                android:text="@string/btn_confirmarReserva"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilCidade" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

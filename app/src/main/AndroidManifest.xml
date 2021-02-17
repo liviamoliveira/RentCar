@@ -51,6 +51,10 @@
             android:name=".ui.reservas.selecionarDataHoraReserva.SelecionarDataHoraActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name=".ui.cadastro.CadastroActivity"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>
