@@ -19,7 +19,6 @@ class CadastroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cadastro)
 
         eventosClique()
-
     }
 
     override fun onStart() {
@@ -27,15 +26,12 @@ class CadastroActivity : AppCompatActivity() {
         statusBarTransparente()
     }
 
-
     private fun eventosClique() {
         btnCadastrar.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
-
 
     private fun statusBarTransparente() {
         window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN

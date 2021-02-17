@@ -15,6 +15,8 @@ import java.util.*
 
 internal class ListarReservasAdapter (private val onSelect: (Reserva) -> Unit) : ListAdapter<Reserva, ListarReservasAdapter.ViewHolder>(DIFF_CALLBACK) {
 
+    private val formatData = "dd MMMM yyyy"
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_reserva, parent, false)
         return ViewHolder(view)
@@ -24,7 +26,7 @@ internal class ListarReservasAdapter (private val onSelect: (Reserva) -> Unit) :
         val item = getItem(position)
         with(holder.itemView) {
 
-            val simpleDateFormat = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
+            val simpleDateFormat = SimpleDateFormat(formatData, Locale.getDefault())
             val dataHoraRetirada = simpleDateFormat.format(item.dataRetirada)
             val dataHoraDevolucao = simpleDateFormat.format(item.dataDevolucao)
 

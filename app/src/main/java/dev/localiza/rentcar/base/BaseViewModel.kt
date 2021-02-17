@@ -17,7 +17,7 @@ abstract class BaseViewModel : ViewModel() {
         Loading
     }
 
-    fun doAsyncWork(work: suspend () -> Unit) {
+    fun doAsync(work: suspend () -> Unit) {
         viewModelScope.launch {
             try {
                 state.call(State.Loading)

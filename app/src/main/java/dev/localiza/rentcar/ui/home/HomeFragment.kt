@@ -34,7 +34,6 @@ internal class HomeFragment : Fragment() {
     }
 
     private fun observers() {
-
         viewModel.showError.observe(this, Observer {
             showMessage(it)
         })

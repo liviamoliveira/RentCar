@@ -19,6 +19,8 @@ internal class DetalharReservasViewModel : BaseViewModel() {
     val localRetiradaTexto = MutableLiveData<String>()
     val localDevolucaoTexto= MutableLiveData<String>()
 
+    private val formatData = "dd MMMM yyyy  HH:mm"
+
     fun init(veiculo: Veiculo, visibilidadeBotao: Boolean, agencia: Agencia?, dataRetirada: Horario?, dataDevolucao: Horario?) {
         exibirVeiculo.value = veiculo
         exibirBotao.value = visibilidadeBotao
@@ -26,7 +28,7 @@ internal class DetalharReservasViewModel : BaseViewModel() {
         localRetiradaTexto.value = agencia?.nome
         localDevolucaoTexto.value = agencia?.nome
 
-        val simpleDateFormat = SimpleDateFormat("dd MMMM yyyy  HH:mm", Locale.getDefault())
+        val simpleDateFormat = SimpleDateFormat(formatData, Locale.getDefault())
         val dataHoraRetirada = simpleDateFormat.format(dataRetirada?.dataHora)
         val dataHoraDevolucao = simpleDateFormat.format(dataDevolucao?.dataHora)
 

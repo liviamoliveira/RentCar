@@ -21,13 +21,16 @@ import kotlinx.android.synthetic.main.activity_selecionar_data_hora.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.time.hours
 
 
 class SelecionarDataHoraActivity : AppCompatActivity() {
     private val viewModel by viewModel<SelecionarDataHoraViewModel>()
 
     private lateinit var listaHorarios: MutableList<Horario>
+
+    private val formatDataddMMMMyyyy = "dd-MM-yyyy"
+    private val formatDatayyyyMMdd = "yyyy-MM-dd"
+    private val formatTime = "HH:mm"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,13 +61,13 @@ class SelecionarDataHoraActivity : AppCompatActivity() {
         })
 
         viewModel.exibirDataRetirada.observe(this, Observer {
-            val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+            val simpleDateFormat = SimpleDateFormat(formatDataddMMMMyyyy, Locale.getDefault())
             val dataFormatada = simpleDateFormat.format(it.time)
             tvDataRetiradaSelecionada.text = dataFormatada
         })
 
         viewModel.exibirDataDevolucao.observe(this, Observer {
-            val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+            val simpleDateFormat = SimpleDateFormat(formatDataddMMMMyyyy, Locale.getDefault())
             val dataFormatada = simpleDateFormat.format(it.time)
             tvDataDevolucaoSelecionada.text = dataFormatada
         })
@@ -78,9 +81,9 @@ class SelecionarDataHoraActivity : AppCompatActivity() {
                     if(viewModel.getHorario(MovimentoTipo.RETIRADA) != null && viewModel.getHorario(MovimentoTipo.DEVOLUCAO) != null)
                         irParaListarVeiculos()
                     else
-                        showSimpleDialog("Preencha data e horário","",false)
+                        showSimpleDialog(getString(R.string.dialog_dataEhorario),"",false)
                 }
-                else -> showSimpleDialog("Preencha data e horário","",false)
+                else -> showSimpleDialog(getString(R.string.dialog_dataEhorario),"",false)
             }
 
         }
@@ -182,7 +185,7 @@ class SelecionarDataHoraActivity : AppCompatActivity() {
                verificarData(movimento, dataSelecionada)
            }
            else{
-               showSimpleDialog("A data de devoluçâo precisa ser maior que a data de retirada","",false)
+               showSimpleDialog(getString(R.string.dialog_infDataDevolucao),"",false)
            }
        }
         else{
@@ -193,7 +196,7 @@ class SelecionarDataHoraActivity : AppCompatActivity() {
     private fun verificarData(movimento: MovimentoTipo, dataSelecionada: Date) {
         viewModel.setData(movimento, dataSelecionada)
 
-        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val simpleDateFormat = SimpleDateFormat(formatDatayyyyMMdd, Locale.getDefault())
         val dataSelecionadaFormatada = simpleDateFormat.format(dataSelecionada.time)
 
         listaHorarios = mutableListOf()
@@ -219,7 +222,7 @@ class SelecionarDataHoraActivity : AppCompatActivity() {
     private fun verificarHorarios(cal: Calendar, dataHoje: String, dataSelecionadaFormatada: String?, horaMinima: Date, dataSelecionada: Date) {
         cal.add(Calendar.HOUR, 1)
 
-        val simpleDateFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+        val simpleDateFormat = SimpleDateFormat(formatTime, Locale.getDefault())
         val data = simpleDateFormat.format(cal.time)
 
         if (dataHoje == dataSelecionadaFormatada) {
@@ -232,7 +235,7 @@ class SelecionarDataHoraActivity : AppCompatActivity() {
     }
 
     private fun selecaoHorarios(movimento: MovimentoTipo, horarios: List<Horario>?) {
-        val dialogTitle = "Horários Disponíveis"
+        val dialogTitle = getString(R.string.dialog_horarioDisp)
 
         if (horarios.isNullOrEmpty()) {
             showSimpleDialog(

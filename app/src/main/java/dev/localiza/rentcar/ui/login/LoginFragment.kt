@@ -25,7 +25,6 @@ class LoginFragment : Fragment() {
     }
 
     private fun eventosClique() {
-
         btEntrar.setOnClickListener {
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)

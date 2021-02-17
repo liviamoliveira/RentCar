@@ -5,6 +5,14 @@
     <string name="menu_reserva">RESERVAS</string>
     <string name="menu_perfil">PERFIL</string>
 
+    <string name="ct_basico">BÁSICO</string>
+    <string name="ct_completo">COMPLETO</string>
+    <string name="ct_Luxo">LUXO</string>
+
+    <string name="dialog_dataEhorario">Preencha data e horário</string>
+    <string name="dialog_infDataDevolucao">A data de devoluçâo precisa ser maior que a data de retirada</string>
+    <string name="dialog_horarioDisp">Horários Disponíveis</string>
+
     <string name="et_cpf">CPF</string>
     <string name="et_nome">Nome</string>
     <string name="et_dataNascimento">Data de Nascimento</string>

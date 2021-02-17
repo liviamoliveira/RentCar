@@ -93,9 +93,9 @@ class DetalharReservasActivity : AppCompatActivity() {
 
     private fun tipoCategoriaDescricao(categoria: CategoriaEnum): String {
         return when (categoria) {
-            CategoriaEnum.BASICO -> "Básico"
-            CategoriaEnum.COMPLETO -> "Completo"
-            else -> "Luxo"
+            CategoriaEnum.BASICO -> getString(R.string.ct_basico)
+            CategoriaEnum.COMPLETO -> getString(R.string.ct_completo)
+            else -> getString(R.string.ct_Luxo)
         }
     }
 
