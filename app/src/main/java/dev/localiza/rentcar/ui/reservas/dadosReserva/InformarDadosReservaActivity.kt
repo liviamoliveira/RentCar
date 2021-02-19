@@ -7,25 +7,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import dev.localiza.rentcar.R
-import dev.localiza.rentcar.model.Agencia
-import dev.localiza.rentcar.model.Cliente
+import dev.localiza.rentcar.base.BaseViewModel
+import dev.localiza.rentcar.base.extension.createLoadingDialog
+import dev.localiza.rentcar.base.sharedPreference.Authentication
+import dev.localiza.rentcar.model.*
 import dev.localiza.rentcar.model.Horario
 import dev.localiza.rentcar.ui.reservas.confirmarReserva.ConfirmarReservaActivity
-import kotlinx.android.synthetic.main.activity_cadastro.*
 import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.*
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etBairro
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etCPF
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etCelular
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etCep
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etCidade
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etComplemento
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etDataNascimento
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etEmail
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etEstado
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etLogradouro
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etNome
-import kotlinx.android.synthetic.main.activity_dados_pessoais_reserva.etNumero
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -36,29 +26,102 @@ class InformarDadosReservaActivity: AppCompatActivity() {
 
     private val formatData = "dd-MM-yyyy"
 
+    private val loadingAlert: AlertDialog? by lazy {
+        createLoadingDialog()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dados_pessoais_reserva)
 
         parametrosIniciais()
         eventosClique()
+        observers()
     }
-
 
     override fun onStart() {
         super.onStart()
         statusBarTransparente()
     }
 
+    private fun observers() {
+        viewModel.sucessoReserva.observe(this, Observer {
+            irParaConfirmacao(it)
+        })
+
+        viewModel.showError.observe(this, Observer {
+            showMessage(it)
+        })
+
+        viewModel.state.observe(this, Observer { state ->
+            when (state) {
+                BaseViewModel.State.Default -> loadingAlert?.hide()
+                BaseViewModel.State.Loading -> loadingAlert?.show()
+            }
+        })
+    }
+
     private fun eventosClique() {
         btConfirmarReserva.setOnClickListener {
-
-            irParaConfirmacao()
+            validarReserva()
         }
     }
 
-    private fun irParaConfirmacao() {
+    private fun validarReserva() {
+        val nome = etNome.text.toString()
+        val cpf = etCPF.text.toString()
+        val cep = etCep.text.toString()
+        val logradouro = etLogradouro.text.toString()
+        val complemento = etComplemento.text.toString()
+        val bairro = etBairro.text.toString()
+        val estado = etEstado.text.toString()
+        val cidade = etCidade.text.toString()
+        val numero = etNumero.text.toString()
+        val celular = etCelular.text.toString()
+        val email = etEmail.text.toString()
+
+        val listaCampos = listOf(nome, cpf, cep, logradouro, complemento, bairro, estado, cidade, numero, celular, email)
+
+        val camposOk = verificarCampos(listaCampos)
+
+        if (camposOk) {
+            val shared = Authentication.getInstance(this)
+            val codigo = shared?.getData(PARAM_KEY_CODIGO)
+
+            adicionarReserva(codigo)
+        }
+    }
+
+    private fun adicionarReserva(codigo: String?) {
+        if (codigo != null) {
+            val reserva = Reserva(0,
+                    viewModel.getVeiculo()!!.id,
+                    null, 1.0, 1.0,
+                    1, null,
+                    2, null,
+                    viewModel.getDataRetirada()?.dataHora, viewModel.getAgencia()?.id!!,
+                    null, viewModel.getDataDevolucao()?.dataHora,
+                    viewModel.getAgencia()?.id!!, null,
+                    1, 1)
+
+            viewModel.salvarReserva(reserva)
+        } else {
+
+            val reserva = Reserva(0,
+                    1, null, 1.0, 1.0,
+                    1, null, 2,
+                    null, viewModel.getDataRetirada()?.dataHora,2,
+                    null,
+                    viewModel.getDataDevolucao()?.dataHora,
+                    2, null, 1, 1)
+
+            viewModel.salvarReserva(reserva)
+        }
+    }
+
+    private fun irParaConfirmacao(id: Int) {
         val intent = Intent(this, ConfirmarReservaActivity::class.java)
+        intent.putExtra(PARAM_ID_RESERVA, id)
         startActivity(intent)
     }
 
@@ -120,14 +183,21 @@ class InformarDadosReservaActivity: AppCompatActivity() {
         val agencia = intent.getParcelableExtra<Agencia>(PARAM_AGENCIA)
         val dataRetirada = intent.getParcelableExtra<Horario>(PARAM_DATA_RETIRADA)
         val dataDevolucao = intent.getParcelableExtra<Horario>(PARAM_DATA_DEVOLUCAO)
+        val veiculo = intent.getParcelableExtra<Veiculo>(PARAM_VEICULO)
 
         if (dataRetirada != null) {
             if (dataDevolucao != null) {
-                viewModel.init(agencia, dataRetirada,dataDevolucao)
+                viewModel.init(agencia, dataRetirada,dataDevolucao,veiculo)
             }
         }
 
-        preencherDados(cliente)
+        val shared = Authentication.getInstance(this)
+        val codigo = shared?.getData(PARAM_KEY_CODIGO)
+
+        if(codigo != null){
+            preencherDados(cliente)
+        }
+
     }
 
     companion object {
@@ -135,5 +205,8 @@ class InformarDadosReservaActivity: AppCompatActivity() {
         private const val PARAM_DATA_RETIRADA = "PARAM_DATA_RETIRADA"
         private const val PARAM_DATA_DEVOLUCAO = "PARAM_DATA_DEVOLUCAO"
         private const val PARAM_AGENCIA = "PARAM_AGENCIA"
+        private const val PARAM_KEY_CODIGO = "PARAM_KEY_CODIGO"
+        private const val PARAM_VEICULO = "PARAM_VEICULO"
+        private const val PARAM_ID_RESERVA = "PARAM_ID_RESERVA"
     }
 }

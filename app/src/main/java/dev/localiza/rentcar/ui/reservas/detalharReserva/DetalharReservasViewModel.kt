@@ -3,7 +3,6 @@ package dev.localiza.rentcar.ui.reservas.detalharReserva
 import androidx.lifecycle.MutableLiveData
 import dev.localiza.rentcar.model.Veiculo
 import dev.localiza.rentcar.base.BaseViewModel
-import dev.localiza.rentcar.base.extension.SingleLiveEvent
 import dev.localiza.rentcar.model.Agencia
 import dev.localiza.rentcar.model.Cliente
 import dev.localiza.rentcar.model.Horario
@@ -51,10 +50,13 @@ internal class DetalharReservasViewModel(private val useCase: BuscarClienteUseCa
     }
 
 
+    fun getVeiculo(): Veiculo? {
+        return exibirVeiculo.value
+    }
 
-    fun getBuscarCliente() {
+    fun getBuscarCliente(codigo: Int) {
         doAsync {
-            val response = useCase.execute(2)
+            val response = useCase.execute(codigo)
             buscarClienteSucesso.value = response
         }
     }

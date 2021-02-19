@@ -2,13 +2,10 @@ package dev.localiza.rentcar.network
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import okhttp3.ConnectionSpec
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okio.Timeout
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
 
 object ApiClientBuilder {
 

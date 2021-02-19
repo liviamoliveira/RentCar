@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.base.BaseViewModel
 import dev.localiza.rentcar.base.extension.createLoadingDialog
+import dev.localiza.rentcar.base.sharedPreference.Authentication
 import dev.localiza.rentcar.model.Agencia
 import dev.localiza.rentcar.model.CategoriaEnum
 import dev.localiza.rentcar.model.Horario
@@ -41,26 +42,18 @@ class DetalharReservasActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        viewModel.getBuscarCliente()
+        buscarCliente()
         statusBarTransparente()
     }
 
+
     private fun eventosClique() {
         btnConfirmarReserva.setOnClickListener {
-            val agencia = intent.getParcelableExtra<Agencia>(PARAM_AGENCIA)
-            val dataRetirada = intent.getParcelableExtra<Horario>(PARAM_DATA_RETIRADA)
-            val dataDevolucao = intent.getParcelableExtra<Horario>(PARAM_DATA_DEVOLUCAO)
-
-            val intent = Intent(this, InformarDadosReservaActivity::class.java)
-            intent.putExtra(PARAM_DADOS_LOGADO, viewModel.getCliente())
-            intent.putExtra(PARAM_DATA_RETIRADA, dataRetirada)
-            intent.putExtra(PARAM_DATA_DEVOLUCAO, dataDevolucao)
-            intent.putExtra(PARAM_AGENCIA, agencia)
-            startActivity(intent)
+            irParaDadosDaReserva()
         }
 
         btnMinhasReserva.setOnClickListener {
-         finish()
+          finish()
         }
     }
 
@@ -110,6 +103,29 @@ class DetalharReservasActivity : AppCompatActivity() {
         })
     }
 
+    private fun buscarCliente() {
+        val shared = Authentication.getInstance(this)
+        val codigo = shared?.getData(PARAM_KEY_CODIGO)
+
+        if (codigo != null) {
+            viewModel.getBuscarCliente(codigo.toString().toInt())
+        }
+    }
+
+    private fun irParaDadosDaReserva() {
+        val agencia = intent.getParcelableExtra<Agencia>(PARAM_AGENCIA)
+        val dataRetirada = intent.getParcelableExtra<Horario>(PARAM_DATA_RETIRADA)
+        val dataDevolucao = intent.getParcelableExtra<Horario>(PARAM_DATA_DEVOLUCAO)
+
+        val intent = Intent(this, InformarDadosReservaActivity::class.java)
+        intent.putExtra(PARAM_DADOS_LOGADO, viewModel.getCliente())
+        intent.putExtra(PARAM_DATA_RETIRADA, dataRetirada)
+        intent.putExtra(PARAM_DATA_DEVOLUCAO, dataDevolucao)
+        intent.putExtra(PARAM_AGENCIA, agencia)
+        intent.putExtra(PARAM_VEICULO, viewModel.getVeiculo())
+        startActivity(intent)
+    }
+
     private fun statusBarTransparente() {
         window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window?.statusBarColor = Color.TRANSPARENT
@@ -155,5 +171,6 @@ class DetalharReservasActivity : AppCompatActivity() {
         private const val PARAM_LOCAL_RETIRADA = "PARAM_LOCAL_RETIRADA"
         private const val PARAM_LOCAL_DEVOLUCAO = "PARAM_LOCAL_DEVOLUCAO"
         private const val PARAM_DADOS_LOGADO = "PARAM_DADOS_LOGADO"
+        private const val PARAM_KEY_CODIGO = "PARAM_KEY_CODIGO"
     }
 }

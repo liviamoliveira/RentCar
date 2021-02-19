@@ -39,70 +39,15 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-                <Button
-                    android:id="@+id/btPerfil"
-                    style="@style/BotaoPrimario.Toggle2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="64dp"
-                    android:layout_marginEnd="16dp"
-                    android:width="350dp"
-                    android:height="70dp"
-                    android:backgroundTint="@color/white"
-                    android:text="SAIR"
-                    android:textColor="@color/verde_contraste"
-                    android:textSize="16sp"
+                <ImageView
+                    android:id="@+id/ivPerfil"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="42dp"
+                    android:src="@drawable/ic_edituser"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cdPerfil" />
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cdPerfil"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="84dp"
-                    android:layout_marginEnd="16dp"
-                    app:cardElevation="6dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvSaudacao">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/ivPerfil"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:src="@drawable/ic_editar"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/tvNomeAgenciaMinhasReservas"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="24dp"
-                            android:text="Editar Cadastro"
-                            android:textAllCaps="true"
-                            android:textColor="@color/cinza_escuro"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/ivPerfil"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/ivPerfil"
-                            app:layout_constraintTop_toTopOf="@+id/ivPerfil" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
+                    app:layout_constraintTop_toBottomOf="@+id/tvSaudacao" />
 
 
                 <Button
@@ -111,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="64dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="16dp"
                     android:width="350dp"
                     android:height="70dp"
@@ -124,17 +69,23 @@
                     app:layout_constraintTop_toBottomOf="@+id/cdPerfil" />
 
 
-                <ImageView
-                    android:id="@+id/ivRoad"
+                <Button
+                    android:id="@+id/cdPerfil"
+                    style="@style/BotaoPrimario.Toggle2"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:layout_marginEnd="120dp"
-                    android:scaleType="fitStart"
-                    android:src="@drawable/ic_road"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="72dp"
+                    android:layout_marginEnd="16dp"
+                    android:width="350dp"
+                    android:height="70dp"
+                    android:backgroundTint="@color/verde_contraste"
+                    android:text="EDITAR CADASTRO"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivPerfil" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

@@ -12,18 +12,19 @@ import dev.localiza.rentcar.ui.reservas.listarReservas.ListarReservasViewModel
 import dev.localiza.rentcar.ui.reservas.listarVeiculos.EscolherVeiculoViewModel
 import dev.localiza.rentcar.ui.reservas.listarAgenciaReserva.ListarAgenciaViewModel
 import dev.localiza.rentcar.ui.reservas.selecionarDataHoraReserva.SelecionarDataHoraViewModel
+import okhttp3.internal.userAgent
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val uiModule = module {
     viewModel { CadastroViewModel(useCase = get()) }
     viewModel { HomeViewModel() }
-    viewModel { ConsultarReservaViewModel() }
+    viewModel { ConsultarReservaViewModel(useCase = get()) }
     viewModel { DetalharReservasViewModel(useCase = get()) }
-    viewModel { ListarReservasViewModel() }
+    viewModel { ListarReservasViewModel(useCase = get()) }
     viewModel { ListarAgenciaViewModel(useCase = get()) }
     viewModel { EscolherVeiculoViewModel() }
-    viewModel { InformarDadosReservaViewModel() }
+    viewModel { InformarDadosReservaViewModel(useCase = get()) }
     viewModel { ConfirmarReservaViewModel() }
     viewModel { SelecionarDataHoraViewModel() }
     viewModel { LoginViewModel(useCase = get()) }

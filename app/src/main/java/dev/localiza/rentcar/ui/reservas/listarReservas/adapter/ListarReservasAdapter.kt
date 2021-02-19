@@ -30,7 +30,7 @@ internal class ListarReservasAdapter (private val onSelect: (Reserva) -> Unit) :
             val dataHoraRetirada = simpleDateFormat.format(item.dataRetirada)
             val dataHoraDevolucao = simpleDateFormat.format(item.dataDevolucao)
 
-            tvNomeAgenciaMinhasReservas.text = item.localRetirada.nome
+            tvNomeAgenciaMinhasReservas.text = item.localRetirada?.nome
             tvDataRetiradaDevolucao.text = "$dataHoraRetirada - $dataHoraDevolucao"
 
            cdMinhasReservas.setOnClickListener {

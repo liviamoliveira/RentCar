@@ -7,6 +7,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import dev.localiza.rentcar.MainActivity
 import dev.localiza.rentcar.R
+import dev.localiza.rentcar.model.Cliente
+import dev.localiza.rentcar.ui.reservas.dadosReserva.InformarDadosReservaActivity
 import kotlinx.android.synthetic.main.activity_confirmar_reserva.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -19,6 +21,7 @@ class ConfirmarReservaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_confirmar_reserva)
 
         eventosClique()
+        parametrosIniciais()
     }
 
     override fun onStart() {
@@ -36,5 +39,14 @@ class ConfirmarReservaActivity : AppCompatActivity() {
     private fun statusBarTransparente() {
         window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         window?.statusBarColor = Color.TRANSPARENT
+    }
+
+    private fun parametrosIniciais() {
+       val idReserva =  intent.getIntExtra(PARAM_ID_RESERVA, 0)
+        tvNumeroReservaEx.text = idReserva.toString()
+    }
+
+    companion object {
+        private const val PARAM_ID_RESERVA = "PARAM_ID_RESERVA"
     }
 }

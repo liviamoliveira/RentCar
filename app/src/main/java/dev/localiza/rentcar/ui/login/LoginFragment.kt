@@ -51,7 +51,7 @@ class LoginFragment : Fragment() {
         })
 
         viewModel.loginSucesso.observe(this, Observer {
-            salvarInformacoesUsuario(it.nome.toString(), it.id)
+            salvarInformacoesUsuario(it.nome.toString(), it.id, it.cpf.toString())
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)
         })
@@ -104,11 +104,12 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun salvarInformacoesUsuario(nome: String, idUsuario: Int): Authentication? {
+    private fun salvarInformacoesUsuario(nome: String, idUsuario: Int, cpf: String): Authentication? {
         val shared = Authentication.getInstance(requireContext())
         shared?.saveData(PARAM_KEY_TOKEN, viewModel.gerarToken())
         shared?.saveData(PARAM_KEY_NOME, nome)
         shared?.saveData(PARAM_KEY_CODIGO, idUsuario.toString())
+        shared?.saveData(PARAM_KEY_CPF, cpf)
         return shared
     }
 
@@ -116,5 +117,6 @@ class LoginFragment : Fragment() {
         private const val PARAM_KEY_TOKEN = "PARAM_KEY_TOKEN"
         private const val PARAM_KEY_NOME = "PARAM_KEY_NOME"
         private const val PARAM_KEY_CODIGO = "PARAM_KEY_CODIGO"
+        private const val PARAM_KEY_CPF = "PARAM_KEY_CPF"
     }
 }

@@ -360,8 +360,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_editar" />
-                            <entry key="sourceFile" value="C:\Users\livia\Desktop\imagensRentCar\editar.svg" />
+                            <entry key="outputName" value="ic_edituser" />
+                            <entry key="sourceFile" value="C:\Users\livia\Desktop\imagensRentCar\EditUser.svg" />
                           </map>
                         </option>
                       </PersistentState>
