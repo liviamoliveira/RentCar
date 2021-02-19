@@ -24,6 +24,22 @@
             android:layout_height="match_parent"
             android:background="@drawable/shape_inicio">
 
+            <TextView
+                android:id="@+id/tvHomeSaudacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="32dp"
+                android:textAllCaps="true"
+                android:textColor="@color/verde_contraste"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Olá, Livia" />
+
             <ImageView
                 android:id="@+id/ivLogo"
                 android:layout_width="match_parent"

@@ -1,12 +1,17 @@
 package dev.localiza.rentcar.ui.reservas.listarAgenciaReserva
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.localiza.rentcar.R
+import dev.localiza.rentcar.base.BaseViewModel
+import dev.localiza.rentcar.base.extension.createLoadingDialog
 import dev.localiza.rentcar.model.*
 import dev.localiza.rentcar.ui.reservas.listarAgenciaReserva.adapter.ListarAgenciaAdapter
 import dev.localiza.rentcar.ui.reservas.selecionarDataHoraReserva.SelecionarDataHoraActivity
@@ -16,6 +21,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class ListarAgenciaActivity: AppCompatActivity() {
 
     private val viewModel by viewModel<ListarAgenciaViewModel>()
+
+    private val loadingAlert: AlertDialog? by lazy {
+        createLoadingDialog()
+    }
 
     private val agenciaAdapter by lazy { ListarAgenciaAdapter{
          viewModel.selecaoAgencia(it)
@@ -35,50 +44,47 @@ class ListarAgenciaActivity: AppCompatActivity() {
     }
 
     private fun observers() {
+        viewModel.showError.observe(this, Observer {
+            showMessage(it)
+        })
+
+        viewModel.state.observe(this, Observer { state ->
+            when (state) {
+                BaseViewModel.State.Default -> loadingAlert?.hide()
+                BaseViewModel.State.Loading -> loadingAlert?.show()
+            }
+        })
+
         viewModel.selecaoAgencia.observe(this, androidx.lifecycle.Observer {
             val intent = Intent(this, SelecionarDataHoraActivity::class.java)
             intent.putExtra(PARAM_AGENCIA, it)
             startActivity(intent)
         })
+
+        viewModel.sucessoListaAgencias.observe(this, Observer {
+            agenciaAdapter.submitList(it)
+        })
     }
+
 
     private fun eventosClique() {
         rvAgencia.layoutManager = LinearLayoutManager(this)
         rvAgencia.adapter = agenciaAdapter
 
-        val veiculo = Veiculo(3,"ABC",
-                150.0,
-                50,
-                2,
-                MarcaVeiculo("MERCEDES-BENZ"),
-                ModeloVeiculo("Mercedes"),
-                2020,
-                CategoriaEnum.LUXO,
-                CombustivelEnum.GASOLINA,
-                "https://www.localiza.com/brasil-site/geral/Frota/MCEX.png"
-        )
+        viewModel.buscarAgencias()
+    }
 
-        val veiculo2 = Veiculo(2,"ABC",
-                65.0,
-                50,
-                2,
-                MarcaVeiculo("FIAT"),
-                ModeloVeiculo("Uno"),
-                2020,
-                CategoriaEnum.BASICO,
-                CombustivelEnum.GASOLINA,
-                "https://www.localiza.com/brasil-site/geral/Frota/NUNS.png"
-        )
+    fun showSimpleDialog(message: String, title: String? = null, isCancelable: Boolean = true, positiveButtonListener: DialogInterface.OnClickListener? = null) {
+        AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, positiveButtonListener)
+                .setCancelable(isCancelable)
+                .show()
+    }
 
-        val veiculoAgencia = VeiculoAgencia(1,1,veiculo)
-        val veiculoAgencia2 = VeiculoAgencia(1,1,veiculo2)
-
-        val agencia = Agencia(1,"ABC", "Agência Cristiano Machado", listOf(veiculoAgencia, veiculoAgencia2))
-        val agencia2 = Agencia(2,"ABCD", "Agência Lourdes", listOf(veiculoAgencia))
-
-        val listaAgencia = listOf(agencia,agencia2)
-
-        agenciaAdapter.submitList(listaAgencia)
+    private fun showMessage(message: String) {
+        showSimpleDialog(message,"",false)
     }
 
     private fun statusBarTransparente() {

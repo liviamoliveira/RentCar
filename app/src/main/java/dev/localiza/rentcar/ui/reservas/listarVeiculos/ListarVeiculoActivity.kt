@@ -74,7 +74,31 @@ class ListarVeiculoActivity : AppCompatActivity() {
         viewModel.setDataHoraRetirada(dataRetirada)
         viewModel.setDataHoraDevolucao(dataDevolucao)
 
-        listarVeiculoAdapter.submitList(agencia.veiculos)
+        if(agencia.veiculos == null){
+
+            val veiculo = Veiculo(3,"ABC",
+                    150.0,
+                    50,
+                    2,
+                    MarcaVeiculo("MERCEDES-BENZ"),
+                    ModeloVeiculo("Mercedes"),
+                    2020,
+                    CategoriaEnum.LUXO,
+                    CombustivelEnum.GASOLINA,
+                    "https://www.localiza.com/brasil-site/geral/Frota/MCEX.png"
+            )
+
+
+            val veiculoAgencia = listOf(VeiculoAgencia(1,1,veiculo))
+
+            val agee = Agencia(1,"Codigo","Cristiano Machado",veiculoAgencia)
+
+            listarVeiculoAdapter.submitList(agee.veiculos)
+
+        }
+        else{
+            listarVeiculoAdapter.submitList(agencia.veiculos)
+        }
     }
 
     companion object {

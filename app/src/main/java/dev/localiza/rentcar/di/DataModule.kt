@@ -8,6 +8,6 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 internal val dataModule = module {
-    single { ApiClientBuilder.createServiceApi(RentCarApi::class.java, baseUrl = "https://pokeapi.co/api/v2/") }
+    single { ApiClientBuilder.createServiceApi(RentCarApi::class.java, baseUrl = "https://g6rentcar.azurewebsites.net/") }
     factory { RentCarNetworkRepository(api = get()) } bind Repository::class
 }

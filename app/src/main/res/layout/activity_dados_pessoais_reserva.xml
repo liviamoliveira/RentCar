@@ -66,6 +66,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvDadosPessoais">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"/>
@@ -86,6 +87,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tilNome">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCPF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"/>
@@ -106,9 +108,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/tilCpf">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDataNascimento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="date"
                     android:singleLine="true"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,9 +128,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/tilDataNascimento">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
                     android:singleLine="true"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,9 +148,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/tilEmail">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCelular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="phone"
                     android:singleLine="true"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -180,6 +182,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvEndereco">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCep"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"/>
@@ -199,6 +202,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tilcep">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLogradouro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"/>
@@ -216,6 +220,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tilLogradouro">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNumero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"/>
@@ -235,6 +240,7 @@
                 app:layout_constraintTop_toTopOf="@+id/tilNumero">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etComplemento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"/>
@@ -254,6 +260,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tilNumero">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBairro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"/>
@@ -271,6 +278,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tilBairro">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEstado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"/>
@@ -290,6 +298,7 @@
                 app:layout_constraintTop_toTopOf="@+id/tilEstado">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCidade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:singleLine="true"/>

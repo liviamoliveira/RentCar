@@ -5,5 +5,4 @@ import dev.localiza.rentcar.base.BaseViewModel
 
 internal class HomeViewModel() : BaseViewModel() {
 
-
 }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import dev.localiza.rentcar.R
+import dev.localiza.rentcar.base.sharedPreference.Authentication
 import dev.localiza.rentcar.ui.reservas.listarAgenciaReserva.ListarAgenciaActivity
 import dev.localiza.rentcar.ui.reservas.listarReservas.ListarReservasFragment
 import kotlinx.android.synthetic.main.fragment_consultar_reserva.*
@@ -22,6 +23,18 @@ class ConsultarReservaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         eventosClique()
+        verificarUsuarioLogado()
+    }
+
+    private fun verificarUsuarioLogado() {
+        val shared = Authentication.getInstance(requireContext())
+        val token = shared?.getData(PARAM_KEY_TOKEN)
+
+        if(token != null){
+            activity?.supportFragmentManager?.beginTransaction()
+                    ?.add(R.id.nav_host_fragment, ListarReservasFragment())
+                    ?.commit()
+        }
     }
 
     private fun eventosClique() {
@@ -36,5 +49,9 @@ class ConsultarReservaFragment : Fragment() {
                     ?.commit()
 
         }
+    }
+
+    companion object{
+        private const val PARAM_KEY_TOKEN = "PARAM_KEY_TOKEN"
     }
 }

@@ -14,6 +14,7 @@ object RequestManager {
             else {
                 val message = response.message()
                 throw when(response.code()) {
+                    400,422 -> ServerErrorException(message)
                     500 -> ServerErrorException(message)
                     else -> GeneralNetworkException(message)
                 }

@@ -3,12 +3,15 @@ package dev.localiza.rentcar.ui.reservas.detalharReserva
 import androidx.lifecycle.MutableLiveData
 import dev.localiza.rentcar.model.Veiculo
 import dev.localiza.rentcar.base.BaseViewModel
+import dev.localiza.rentcar.base.extension.SingleLiveEvent
 import dev.localiza.rentcar.model.Agencia
+import dev.localiza.rentcar.model.Cliente
 import dev.localiza.rentcar.model.Horario
+import dev.localiza.rentcar.usecase.BuscarClienteUseCase
 import java.text.SimpleDateFormat
 import java.util.*
 
-internal class DetalharReservasViewModel : BaseViewModel() {
+internal class DetalharReservasViewModel(private val useCase: BuscarClienteUseCase) : BaseViewModel() {
 
     val exibirVeiculo = MutableLiveData<Veiculo>()
     val exibirBotao = MutableLiveData<Boolean>()
@@ -18,6 +21,8 @@ internal class DetalharReservasViewModel : BaseViewModel() {
     val dataHoraDevolucaoTexto= MutableLiveData<String>()
     val localRetiradaTexto = MutableLiveData<String>()
     val localDevolucaoTexto= MutableLiveData<String>()
+
+    val buscarClienteSucesso = MutableLiveData<Cliente>()
 
     private val formatData = "dd MMMM yyyy  HH:mm"
 
@@ -43,5 +48,18 @@ internal class DetalharReservasViewModel : BaseViewModel() {
         localDevolucaoTexto.value = localDevolucao
         dataHoraRetiradaTexto.value = dataRetirada
         dataHoraDevolucaoTexto.value = dataDevolucao
+    }
+
+
+
+    fun getBuscarCliente() {
+        doAsync {
+            val response = useCase.execute(2)
+            buscarClienteSucesso.value = response
+        }
+    }
+
+    fun getCliente(): Cliente? {
+        return buscarClienteSucesso.value
     }
 }

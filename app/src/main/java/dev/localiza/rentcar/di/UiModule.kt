@@ -3,6 +3,7 @@ package dev.localiza.rentcar.di
 import dev.localiza.rentcar.ui.cadastro.CadastroViewModel
 import dev.localiza.rentcar.ui.home.HomeViewModel
 import dev.localiza.rentcar.ui.login.LoginViewModel
+import dev.localiza.rentcar.ui.perfil.PerfilViewModel
 import dev.localiza.rentcar.ui.reservas.confirmarReserva.ConfirmarReservaViewModel
 import dev.localiza.rentcar.ui.reservas.consultarReserva.ConsultarReservaViewModel
 import dev.localiza.rentcar.ui.reservas.detalharReserva.DetalharReservasViewModel
@@ -15,15 +16,16 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val uiModule = module {
-    viewModel { CadastroViewModel() }
+    viewModel { CadastroViewModel(useCase = get()) }
     viewModel { HomeViewModel() }
     viewModel { ConsultarReservaViewModel() }
-    viewModel { DetalharReservasViewModel() }
+    viewModel { DetalharReservasViewModel(useCase = get()) }
     viewModel { ListarReservasViewModel() }
-    viewModel { ListarAgenciaViewModel() }
+    viewModel { ListarAgenciaViewModel(useCase = get()) }
     viewModel { EscolherVeiculoViewModel() }
     viewModel { InformarDadosReservaViewModel() }
     viewModel { ConfirmarReservaViewModel() }
     viewModel { SelecionarDataHoraViewModel() }
-    viewModel { LoginViewModel() }
+    viewModel { LoginViewModel(useCase = get()) }
+    viewModel { PerfilViewModel() }
 }

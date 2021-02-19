@@ -8,5 +8,5 @@ data class Agencia(
     val id: Int,
     val codigo: String,
     val nome: String,
-    val veiculos: List<VeiculoAgencia>
+    val veiculos: List<VeiculoAgencia>?
 ): Parcelable
