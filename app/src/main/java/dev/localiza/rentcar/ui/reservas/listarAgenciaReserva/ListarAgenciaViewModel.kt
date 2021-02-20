@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import dev.localiza.rentcar.base.BaseViewModel
 import dev.localiza.rentcar.base.extension.SingleLiveEvent
 import dev.localiza.rentcar.model.Agencia
-import dev.localiza.rentcar.model.Cliente
 import dev.localiza.rentcar.usecase.BuscarAgenciasUseCase
 
 internal class ListarAgenciaViewModel(private val useCase: BuscarAgenciasUseCase)  : BaseViewModel() {

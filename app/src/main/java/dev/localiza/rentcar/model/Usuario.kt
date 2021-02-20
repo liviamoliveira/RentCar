@@ -7,6 +7,6 @@ import kotlinx.android.parcel.Parcelize
 data class Usuario (
     val login: String,
     val senha: String,
-    val registroId: Int,
-    val registro : RegistroUsuario
+    val registroId: Int?,
+    val registro : RegistroUsuario?
 ): Parcelable

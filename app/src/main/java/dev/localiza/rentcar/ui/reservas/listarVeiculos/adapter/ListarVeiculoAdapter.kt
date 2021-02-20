@@ -53,7 +53,7 @@ internal class ListarVeiculoAdapter(private val onSelect: (Veiculo) -> Unit) : L
         tvMarcaVeiculo.text = item.marca.nome
         tvModeloVeiculo.text = item.modelo.nome
         tvMala.text = item.capacidadePortaMalas.toString()
-        tvCategoriaVeiculo.text = tipoCategoriaDescricao(item.categoria)
+        tvCategoriaVeiculo.text = tipoCategoriaDescricao(item.categoria ?: CategoriaEnum.BASICO)
         tvPreco.text =  "R$ " + "%.2f".format(item.valorHora).replace(".",",")
     }
 

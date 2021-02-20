@@ -69,7 +69,7 @@ class DetalharReservasActivity : AppCompatActivity() {
             tvMarcaVeiculo.text = veiculo.marca.nome
             tvModeloVeiculo.text = veiculo.modelo.nome
             tvPrecoTotal.text = "R$ " + "%.2f".format(veiculo.valorHora).replace(".",",")
-            tvCategoriaVeiculo.text = tipoCategoriaDescricao(veiculo.categoria)
+            tvCategoriaVeiculo.text = tipoCategoriaDescricao(veiculo.categoria ?: CategoriaEnum.BASICO)
 
             Glide.with(this).load(veiculo.urlVeiculo)
                 .placeholder(R.drawable.ic_logo)

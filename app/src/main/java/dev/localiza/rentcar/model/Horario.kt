@@ -8,5 +8,4 @@ import java.util.*
 internal data class Horario(
         val exibicao: String,
         val dataHora: Date
-) : Parcelable {
-}
+) : Parcelable

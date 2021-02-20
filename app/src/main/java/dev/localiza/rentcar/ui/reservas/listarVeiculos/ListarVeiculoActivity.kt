@@ -13,8 +13,6 @@ import kotlinx.android.synthetic.main.activity_listar_veiculo.*
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import dev.localiza.rentcar.ui.reservas.detalharReserva.DetalharReservasActivity
-import dev.localiza.rentcar.ui.reservas.selecionarDataHoraReserva.SelecionarDataHoraActivity
-import java.util.*
 
 class ListarVeiculoActivity : AppCompatActivity() {
 
@@ -77,15 +75,15 @@ class ListarVeiculoActivity : AppCompatActivity() {
         if(agencia.veiculos == null){
 
             val veiculo = Veiculo(3,"ABC",
-                    150.0,
+                    60.0,
                     50,
                     2,
-                    MarcaVeiculo("MERCEDES-BENZ"),
-                    ModeloVeiculo("Mercedes"),
+                    MarcaVeiculo("Renault"),
+                    ModeloVeiculo("Sandero"),
                     2020,
                     CategoriaEnum.LUXO,
                     CombustivelEnum.GASOLINA,
-                    "https://www.localiza.com/brasil-site/geral/Frota/MCEX.png"
+                    "https://www.localiza.com/brasil-site/geral/Frota/SAND.png"
             )
 
 

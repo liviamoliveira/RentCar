@@ -14,9 +14,7 @@ import dev.localiza.rentcar.R
 import dev.localiza.rentcar.base.BaseViewModel
 import dev.localiza.rentcar.base.extension.createLoadingDialog
 import dev.localiza.rentcar.base.sharedPreference.Authentication
-import dev.localiza.rentcar.ui.reservas.consultarReserva.ConsultarReservaFragment
 import dev.localiza.rentcar.ui.reservas.listarAgenciaReserva.ListarAgenciaActivity
-import dev.localiza.rentcar.ui.reservas.listarReservas.ListarReservasFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

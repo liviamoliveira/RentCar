@@ -1,14 +1,12 @@
 package dev.localiza.rentcar.ui.cadastro
 
 import android.content.DialogInterface
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import dev.localiza.rentcar.MainActivity
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.base.BaseViewModel
 import dev.localiza.rentcar.base.extension.createLoadingDialog
@@ -52,8 +50,7 @@ class CadastroActivity : AppCompatActivity() {
         })
 
         viewModel.sucessoCadastro.observe(this, Observer {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         })
     }
 

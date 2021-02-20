@@ -13,18 +13,21 @@ data class Veiculo (
         val marca: MarcaVeiculo,
         val modelo: ModeloVeiculo,
         val ano: Int,
-        val categoria: CategoriaEnum,
-        val combustivel: CombustivelEnum,
+        val categoria: CategoriaEnum?,
+        val combustivel: CombustivelEnum?,
         val urlVeiculo: String
 ): Parcelable
 
-enum class CategoriaEnum {
+
+@Parcelize
+enum class CategoriaEnum : Parcelable  {
         BASICO,
         COMPLETO,
         LUXO
 }
 
-enum class CombustivelEnum {
+@Parcelize
+enum class CombustivelEnum : Parcelable {
         ALCOOL,
         GASOLINA,
         DIESEL

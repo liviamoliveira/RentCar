@@ -7,8 +7,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import dev.localiza.rentcar.MainActivity
 import dev.localiza.rentcar.R
-import dev.localiza.rentcar.model.Cliente
-import dev.localiza.rentcar.ui.reservas.dadosReserva.InformarDadosReservaActivity
 import kotlinx.android.synthetic.main.activity_confirmar_reserva.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

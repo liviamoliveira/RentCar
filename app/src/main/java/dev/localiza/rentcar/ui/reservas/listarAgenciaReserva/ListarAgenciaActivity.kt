@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dev.localiza.rentcar.R
 import dev.localiza.rentcar.base.BaseViewModel
 import dev.localiza.rentcar.base.extension.createLoadingDialog
-import dev.localiza.rentcar.model.*
 import dev.localiza.rentcar.ui.reservas.listarAgenciaReserva.adapter.ListarAgenciaAdapter
 import dev.localiza.rentcar.ui.reservas.selecionarDataHoraReserva.SelecionarDataHoraActivity
 import kotlinx.android.synthetic.main.activity_listar_agencias.*
